@@ -1,0 +1,46 @@
+﻿From ActivateEvent funtion - case 9:
+
+    Debug.Log("CASE 9------1");
+                /*if (bad_event_occured) {
+                    final_event_text.text = "An employee accidentally sends a sensitive email to the wrong person."
+                        + "\nNP has decreased by 30.";
+                    DecreaseNP(30);
+                } else {
+                    final_event_text.text = GoodMessage();
+                }
+                */
+
+                current_choice_text ="The Credit Bureau Equifax has a data breach. 143 million Americans have " +
+                "their financial information exposed. Click to see if yours was included... ";
+
+                //final_choice_text.text = "The Credit Bureau Equifax has a data breach. 143 million Americans have " +
+                //    "their financial information exposed. Click to see if yours was included... ";
+                
+                // End game -----------------------> MOVE IT TO THE LAST MONTH
+                //current_choice_text = "You have finished your work year! " +
+                //"Let's see how you did..";
+
+From AcrivateChoice function - case 9:
+
+  Debug.Log("CASE 9------2");
+  // TODO - incorporate this into a method
+                single_event_box.SetActive(false);
+
+                if (x)
+                {
+                    if(DataBreach()) {
+                        DecreaseNP(50);
+
+                        current_decision_text = "Oh no! Your information was hacked.." +
+                            "<i>\nNP has decreased by 50.</i>.";
+
+                        DisplayDecision();
+                        
+                    } else {
+                        current_decision_text = "Fortunately for you, your information remains safe.";
+
+                        DisplayDecision();
+                    }
+                }
+                    //TODO: Might need to complete the else for this section in order to continue to the next month
+
