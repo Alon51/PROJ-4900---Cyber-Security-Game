@@ -6,18 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class MovingImagesAndText : MonoBehaviour {
 
+    private DialogueManager dialog; // -------
+
     public GameObject girl;
     public GameObject boy;
     public GameObject envelope;
+    public Text helloItIsAnnText;
+    public GameObject arrow;
 
     //public Text textToMove;
     private Rigidbody2D girlRB;
     private Rigidbody2D boyRB;
     private Rigidbody2D envelopeRB;
+    private Rigidbody2D helloItIsAnnTextRB;
+    private Rigidbody2D arrowRB;
 
     //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
-
 
     // Use this for initialization
     void Awake()
@@ -25,23 +30,67 @@ public class MovingImagesAndText : MonoBehaviour {
         girlRB = girl.GetComponent<Rigidbody2D>();
         boyRB = boy.GetComponent<Rigidbody2D>();
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
-        velocity = new Vector2(-5, 0);
+        helloItIsAnnTextRB = helloItIsAnnText.GetComponent<Rigidbody2D>();
+        arrowRB = arrow.GetComponent<Rigidbody2D>();
+        velocity = new Vector2(-5, 0); // controling the x and y posstion, will move 5 units on the x direction to the left
+
+        //Get an access to the DialogueManager script to manage the demonstration according to the line displayed:
+        dialog = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+
+
+        envelope.SetActive(false);// Wait to display the envelope with sentence 4:
+        arrow.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(boy.transform.position.x > 7.0){
-            boyRB.MovePosition(boyRB.position + velocity * Time.fixedDeltaTime);
-        }
-        if (girl.transform.position.x < -7.0)
+        if(dialog.currentSentenceDisplayed == 3)
         {
-            girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
+            dialog.setProceed(false); // Lock the user from proceeding 
+
+            if(boy.transform.position.x > 7.0) //Move boy pic:
+            {
+                boyRB.MovePosition(boyRB.position + velocity * Time.fixedDeltaTime);
+            }
+            if (girl.transform.position.x < -7.0) //Move girl pic:
+            {
+                girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
+            }
+            //If both pictures of the boy and the girl are in place, start to move the envelope until its x position is 4.3:
+            if (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
+            {
+                envelope.SetActive(true);
+                envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
+            }
+
+            if(envelope.transform.position.x >= 4.3) // If the envelope in its posstion:
+            {
+                dialog.setProceed(true); // Let the user continue
+            }
         }
-        if (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
+
+        //If the sentennce number displayed is 4 and the position of the text in not at posstion y=3:
+        if (dialog.currentSentenceDisplayed == 4 && helloItIsAnnText.transform.position.y > 3)
         {
-            envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
+            boy.SetActive(false);
+            girl.SetActive(false);
+            envelope.SetActive(false);
+
+            helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
         }
+
+        if (dialog.currentSentenceDisplayed == 5 && arrow.transform.position.x < 3.85)
+        {
+            dialog.setProceed(false);
+            arrow.SetActive(true);
+            arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
+        }
+        if(arrow.transform.position.x >= 3.85)
+        {
+            dialog.setProceed(true);
+        }
+
     }
 
     /*public void MovingEnvelope()
