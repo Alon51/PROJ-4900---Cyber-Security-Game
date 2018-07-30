@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MovingImagesAndText : MonoBehaviour {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public GameObject girl;
     public GameObject boy;
     public GameObject envelope;
-=======
+
     private DialogueManager dialog; // -------
 
     public GameObject girl;
@@ -19,83 +17,34 @@ public class MovingImagesAndText : MonoBehaviour {
     public GameObject envelope;
     public Text helloItIsAnnText;
     public GameObject arrow;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
+
     public GameObject girl;
     public GameObject boy;
     public GameObject envelope;
->>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
+
+    public GameObject girl;
+    public GameObject boy;
+    public GameObject envelope;
 
     //public Text textToMove;
     private Rigidbody2D girlRB;
     private Rigidbody2D boyRB;
     private Rigidbody2D envelopeRB;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
     private Rigidbody2D helloItIsAnnTextRB;
     private Rigidbody2D arrowRB;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
 
     //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
-
->>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
-    // Use this for initialization
     void Awake()
     {
         girlRB = girl.GetComponent<Rigidbody2D>();
         boyRB = boy.GetComponent<Rigidbody2D>();
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         velocity = new Vector2(-5, 0);
-=======
+
         helloItIsAnnTextRB = helloItIsAnnText.GetComponent<Rigidbody2D>();
         arrowRB = arrow.GetComponent<Rigidbody2D>();
         velocity = new Vector2(-5, 0); // controling the x and y posstion, will move 5 units on the x direction to the left
@@ -106,10 +55,8 @@ public class MovingImagesAndText : MonoBehaviour {
 
         envelope.SetActive(false);// Wait to display the envelope with sentence 4:
         arrow.SetActive(false);
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
+
         velocity = new Vector2(-5, 0);
->>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
     }
 
     // Update is called once per frame
@@ -117,13 +64,13 @@ public class MovingImagesAndText : MonoBehaviour {
     {
         if(boy.transform.position.x > 7.0){
             boyRB.MovePosition(boyRB.position + velocity * Time.fixedDeltaTime);
-<<<<<<< HEAD
+
         }
         if (girl.transform.position.x < -7.0)
         {
             girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
-<<<<<<< HEAD
+
         if (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
@@ -142,23 +89,10 @@ public class MovingImagesAndText : MonoBehaviour {
             arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
         if(arrow.transform.position.x >= 3.85)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
-<<<<<<< HEAD
+
     }
     */
     IEnumerator MovingEnvelope()
@@ -166,25 +100,11 @@ public class MovingImagesAndText : MonoBehaviour {
         //Wait for a little before displaying the message:
         yield return new WaitForSeconds(1.0f);//Wait for 4 seconds.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         if (envelope.transform.position.x < 4.7)
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
-=======
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
 
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
         }
         if (girl.transform.position.x < -7.0)
         {
@@ -194,7 +114,16 @@ public class MovingImagesAndText : MonoBehaviour {
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
->>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
+
+        }
+        if (girl.transform.position.x < -7.0)
+        {
+            girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
+        }
+        if (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
+        {
+            envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
+        }
     }
 
     /*public void MovingEnvelope()
@@ -214,18 +143,5 @@ public class MovingImagesAndText : MonoBehaviour {
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
-=======
->>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
     }
 }
