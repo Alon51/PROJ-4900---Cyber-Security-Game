@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MovingImagesAndText : MonoBehaviour {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public GameObject girl;
     public GameObject boy;
     public GameObject envelope;
@@ -31,11 +32,17 @@ public class MovingImagesAndText : MonoBehaviour {
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+    public GameObject girl;
+    public GameObject boy;
+    public GameObject envelope;
+>>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
 
     //public Text textToMove;
     private Rigidbody2D girlRB;
     private Rigidbody2D boyRB;
     private Rigidbody2D envelopeRB;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     private Rigidbody2D helloItIsAnnTextRB;
@@ -53,6 +60,8 @@ public class MovingImagesAndText : MonoBehaviour {
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+>>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
 
     //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
@@ -62,6 +71,7 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -73,12 +83,16 @@ public class MovingImagesAndText : MonoBehaviour {
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+
+>>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
     // Use this for initialization
     void Awake()
     {
         girlRB = girl.GetComponent<Rigidbody2D>();
         boyRB = boy.GetComponent<Rigidbody2D>();
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
+<<<<<<< HEAD
 <<<<<<< HEAD
         velocity = new Vector2(-5, 0);
 =======
@@ -93,6 +107,9 @@ public class MovingImagesAndText : MonoBehaviour {
         envelope.SetActive(false);// Wait to display the envelope with sentence 4:
         arrow.SetActive(false);
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+        velocity = new Vector2(-5, 0);
+>>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
     }
 
     // Update is called once per frame
@@ -100,6 +117,7 @@ public class MovingImagesAndText : MonoBehaviour {
     {
         if(boy.transform.position.x > 7.0){
             boyRB.MovePosition(boyRB.position + velocity * Time.fixedDeltaTime);
+<<<<<<< HEAD
         }
         if (girl.transform.position.x < -7.0)
         {
@@ -166,6 +184,17 @@ public class MovingImagesAndText : MonoBehaviour {
 =======
 
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+        }
+        if (girl.transform.position.x < -7.0)
+        {
+            girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
+        }
+        if (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
+        {
+            envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
+        }
+>>>>>>> parent of b714e6e... continue modifications for scene 10, added more sentences and pictures
     }
 
     /*public void MovingEnvelope()
