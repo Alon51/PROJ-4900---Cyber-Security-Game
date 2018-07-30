@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject portrait;         //^
     public Text text_name;              //^
     public Text text_dialogue;          //^
+    public int currentSentenceDisplayed = -1;// to match the index in the queue, start in -1 and increase 
 
     public GameObject panel;
 
@@ -54,7 +55,9 @@ public class DialogueManager : MonoBehaviour
         if(!has_ended && has_started) {
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
                 DisplayNextSentence();
+
             }
+
         }
     }
     //TODO: more comments
@@ -109,6 +112,8 @@ public class DialogueManager : MonoBehaviour
     //looping through each character, creating a typewriter effect
     IEnumerator TypeSentence(string sentence)
     {
+        currentSentenceDisplayed++; // Updating the variable to show the index of the current sentence 
+
         text_dialogue.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
@@ -146,6 +151,8 @@ public class DialogueManager : MonoBehaviour
 
         if(has_ended)
         {
+            currentSentenceDisplayed = -1; // Updating the variable for the next iteration
+
             panel.GetComponent<Image>().raycastTarget = false;
             panel.GetComponent<Image>().DOColor(new Color32(50, 50, 50, 0), 0.5f);
 
