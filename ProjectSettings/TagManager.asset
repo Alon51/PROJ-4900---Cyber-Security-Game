@@ -10,7 +10,6 @@ TagManager:
   - PromptManager
   - FirstChoice
   - phishingQuestion
-  - scn_main
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class OneTimePadSceneController : MonoBehaviour {
 
     //public GameObject obj;
     private DialogueManager dialog;
-    //private MovingImagesAndText movingObjects; // object to the script to move images on the screen
+    private MovingImagesAndText movingObjects; // object to the script to move images on the screen
 
     private GameObject scn_main;
     public GameObject demonstademonstration; // drag and drop the the demonstademonstration child object of the scn_one_time_pad
@@ -27,8 +27,11 @@ public class OneTimePadSceneController : MonoBehaviour {
 
         //Get an access to the DialogueManager script to manage the demonstration according to the line displayed:
         dialog = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-    }
 
+        //Get an access to the DialogueManager script to manage the demonstration according to the line displayed:
+        //movingObjects = GameObject.Find("Demonstademonstration").GetComponent<MovingImagesAndText>();
+    }
+    //dlg_one_time_pad
     private void FixedUpdate()
     {
         switch(dialog.currentSentenceDisplayed)
