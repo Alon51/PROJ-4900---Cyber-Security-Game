@@ -21,6 +21,9 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -40,6 +43,9 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -55,7 +61,10 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
@@ -118,6 +127,9 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -128,6 +140,7 @@ public class MovingImagesAndText : MonoBehaviour {
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
+<<<<<<< HEAD
     }
     */
     IEnumerator MovingEnvelope()
@@ -149,6 +162,9 @@ public class MovingImagesAndText : MonoBehaviour {
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
+
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
     }
 
@@ -172,6 +188,9 @@ public class MovingImagesAndText : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
