@@ -37,6 +37,7 @@ public class MovingImagesAndText : MonoBehaviour {
     //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
 
+    // Use this for initialization
     void Awake()
     {
         girlRB = girl.GetComponent<Rigidbody2D>();
