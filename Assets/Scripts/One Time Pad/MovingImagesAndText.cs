@@ -19,6 +19,9 @@ public class MovingImagesAndText : MonoBehaviour {
     public Text helloItIsAnnText;
     public GameObject arrow;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -32,6 +35,9 @@ public class MovingImagesAndText : MonoBehaviour {
     private Rigidbody2D helloItIsAnnTextRB;
     private Rigidbody2D arrowRB;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -41,7 +47,10 @@ public class MovingImagesAndText : MonoBehaviour {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
@@ -98,6 +107,9 @@ public class MovingImagesAndText : MonoBehaviour {
         }
         if(arrow.transform.position.x >= 3.85)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
@@ -113,11 +125,14 @@ public class MovingImagesAndText : MonoBehaviour {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (envelope.transform.position.x < 4.7)
         {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
 =======
+=======
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
     }
@@ -140,6 +155,9 @@ public class MovingImagesAndText : MonoBehaviour {
             envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
+=======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
 =======
 >>>>>>> parent of 257dcc2... Added the random number to the boxes in scene 10
