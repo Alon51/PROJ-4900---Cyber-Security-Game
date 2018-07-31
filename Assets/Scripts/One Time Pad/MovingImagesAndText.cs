@@ -126,7 +126,7 @@ public class MovingImagesAndText : MonoBehaviour {
                 arrow.SetActive(true);  
             }
 
-            // generate numbers individually or all together
+            /*/ generate numbers individually or all together
             for (int i = 0; i < squares_numbers.Length; i++)
             {
                 //generate a number:
@@ -141,7 +141,7 @@ public class MovingImagesAndText : MonoBehaviour {
                     arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
                 }
             }
-
+            */
         }
 
     }
