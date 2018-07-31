@@ -44,6 +44,8 @@ public class DialogueManager : MonoBehaviour
     public float x_pos_end_box          = 16.0f;    //^
     public float x_pos_end_portrait     = -12.0f;   //^
 
+    private bool proceed = true; //Create a locking mechanism to prevent the user to continue when demonstration in the one time pad is going 
+
 	// Use this for initialization
 	void Start()
 	{
@@ -82,31 +84,34 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence() //When the user clicks the button in the dialoue box
     {
-        // sentences haven't ended
-        if(!has_ended)
+        if(proceed) // In some cases like in the demonstraion of the one time pad - the user can't proceed until demonstration is over for each sentence
         {
-            //are there more sentences in the queue?
-            if(sentences.Count == 0)
+            // sentences haven't ended
+            if (!has_ended)
             {
-                elapsed_time = 0;
-                has_ended = true;
-                has_started = false;
+                //are there more sentences in the queue?
+                if (sentences.Count == 0)
+                {
+                    elapsed_time = 0;
+                    has_ended = true;
+                    has_started = false;
 
-                // switch out of dialogue
-                GameControllerV2.Instance.DialogueSwitch();
+                    // switch out of dialogue
+                    GameControllerV2.Instance.DialogueSwitch();
 
-                return;
+                    return;
+                }
             }
+
+            // play a beep sound
+            GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
+
+            string sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));   
         }
-
-        // play a beep sound
-        GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
-
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
     }
 
     //looping through each character, creating a typewriter effect
@@ -173,5 +178,14 @@ public class DialogueManager : MonoBehaviour
                 0.5f * elapsed_time);*/
             portrait.transform.DOMove(new Vector2(x_pos_end_portrait, current_pos.y), 0.5f);
         }
+    }
+
+    public bool getProceed()
+    {
+        return proceed;
+    }
+    public void setProceed(bool x)
+    {
+        proceed = x;
     }
 }
