@@ -25,7 +25,7 @@ using DG.Tweening;
 
 public class DialogueManager : MonoBehaviour
 {
-    private MovingImagesAndText imagesAndText; // Object to call a function from that class when the user press continue button in the dialog
+    //private MovingImagesAndText imagesAndText = new MovingImagesAndText(); // Object to call a function from that class when the user press continue button in the dialog
 
     public GameObject dialogue_box;     //textbox element to be dragged into inspector
     public GameObject portrait;         //^
