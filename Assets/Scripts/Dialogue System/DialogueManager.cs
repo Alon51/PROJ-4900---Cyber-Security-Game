@@ -25,6 +25,8 @@ using DG.Tweening;
 
 public class DialogueManager : MonoBehaviour
 {
+    private MovingImagesAndText imagesAndText; // Object to call a function from that class when the user press continue button in the dialog
+
     public GameObject dialogue_box;     //textbox element to be dragged into inspector
     public GameObject portrait;         //^
     public Text text_name;              //^
@@ -53,13 +55,14 @@ public class DialogueManager : MonoBehaviour
 	}
 
     // Allows for enter key to display next sentence
-    void Update() {
-        if(!has_ended && has_started) {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) {
+    void Update() 
+    {
+        if(!has_ended && has_started) 
+        {
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) 
+            {
                 DisplayNextSentence();
-
             }
-
         }
     }
     //TODO: more comments

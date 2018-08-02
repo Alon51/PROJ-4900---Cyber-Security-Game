@@ -44,3 +44,17 @@ From AcrivateChoice function - case 9:
                 }
                     //TODO: Might need to complete the else for this section in order to continue to the next month
 
+
+
+
+
+If Ann wants to send a secret message to Matt, she will have to use some sort of technic to encrypt her message. 
+Ann will use OTP encryption by following number of steps.
+
+Assuming Ann would like to send the message: "Hello it is Ann". 
+Let's see what she will have to do to use OTP succesfully.
+
+Fitst: Ann will have to count how many letters she has in the sentence. As we can see, in this sentence we have 12 letters. 
+Note  that the structure of the sentence will stay the same before and after the encryption.
+
+Second: Ann will generate 12 random numbers to replace with each letter.
