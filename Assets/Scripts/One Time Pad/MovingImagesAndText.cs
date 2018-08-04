@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class MovingImagesAndText : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class MovingImagesAndText : MonoBehaviour {
     public GameObject arrow;
     public GameObject squares; // To move them as a group, located on top of the window
     public Text[] squares_numbers ;
+    public GameObject sceneTenToCheck;
 
     //public Text textToMove;
     private Rigidbody2D girlRB;
@@ -28,6 +30,8 @@ public class MovingImagesAndText : MonoBehaviour {
 
     //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
+
+    bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
 
     float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
 
@@ -54,7 +58,7 @@ public class MovingImagesAndText : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*
+        
         if(dialog.currentSentenceDisplayed == 3)
         {
             dialog.setProceed(false); // Lock the user from proceeding 
@@ -96,10 +100,11 @@ public class MovingImagesAndText : MonoBehaviour {
             dialog.setProceed(false); // lock the continue button
             arrow.SetActive(true); // Show the arrow in the screen
             arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
-        }
-        if(arrow.transform.position.x >= 3.85)// after the arrow got to the end of the sentence, release the lock
-        {
-            dialog.setProceed(true);
+
+            if (arrow.transform.position.x >= 3.85)// after the arrow got to the end of the sentence, release the lock
+            {
+                dialog.setProceed(true);
+            }
         }
 
         //Sentence 6, generate the numbers
@@ -107,9 +112,13 @@ public class MovingImagesAndText : MonoBehaviour {
         {
             dialog.setProceed(false); // lock the continue button
 
-            // move the arrow to the first number - for now I chose the easy way 
-            arrowRB.transform.position = new Vector3(-7.70f,2.30f);
-            arrow.SetActive(false);
+            if(arrowInPosition)
+            {
+                arrowInPosition = !arrowInPosition; // now the varible is false and we won't repeat that again
+                // move the arrow to the first number - for now I chose the easy way 
+                arrowRB.transform.position = new Vector3(-8.3f, 2.30f);
+                arrow.SetActive(false);    
+            }
 
             // drag out the text upward
             if(helloItIsAnnText.transform.position.y < 8)
@@ -126,174 +135,59 @@ public class MovingImagesAndText : MonoBehaviour {
             {
                 arrow.SetActive(true);  
             }
-
-            /*
-            //generate a number:
-            while (timePassed < 5) // giving 2 seconds to generate a number
+            if (arrowRB.position.x < 7.70f)
             {
-                //squares_numbers[0].text = "" + Random.Range(1, 26);
-                //Debug.Log(squares_numbers[0].text);
-                Debug.Log(timePassed);
-                timePassed += Time.deltaTime;
-            }*/
+                arrowRB.MovePosition(arrowRB.position + new Vector2(-3, 0) * (-1) * Time.fixedDeltaTime);
 
-    /*
-            // generate numbers individually or all together
-            for (int i = 0; i < squares_numbers.Length; i++)
-            {
-                TimeMachine(2, i);
-                //squares_numbers[i].text = "" + Random.Range(1, 26);
-                /*
-                //move the arrow:
-                while (arrow.transform.position.x < arrow.transform.position.x + 20f)
+                if(arrowRB.position.x > -8f && arrowRB.position.x < -7.8f) // arrow.x >-6.33 and arrow.x < -6.3
                 {
-                    arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
+                    squares_numbers[0].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > -6.5f && arrowRB.position.x < -6.3f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[1].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > -5.0f && arrowRB.position.x < -4.8f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[2].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > -3.7f && arrowRB.position.x < -3.5f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[3].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > -2.2f && arrowRB.position.x < -2.0f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[4].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > -0.74f && arrowRB.position.x < -0.60f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[5].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > 0.6f && arrowRB.position.x < 0.74f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[6].text = "" + Random.Range(1, 26); // 6
+                }
+                if (arrowRB.position.x > 2.0f && arrowRB.position.x < 2.2f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[7].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > 3.5f && arrowRB.position.x < 3.7f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[8].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > 4.8f && arrowRB.position.x < 5.0f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[9].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > 6.3f && arrowRB.position.x < 6.5f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[10].text = "" + Random.Range(1, 26);
+                }
+                if (arrowRB.position.x > 7.4f && arrowRB.position.x < 7.8f) // arrow.x >-6.33 and arrow.x < -6.3
+                {
+                    squares_numbers[11].text = "" + Random.Range(1, 26);
                 }
             }
         }
-    */
-    }
-
-    void TimeMachine(float seconds, int boxNumber)
-    {
-        float tempSeconds = 0;
-
-        while(tempSeconds < seconds)
-        {
-            squares_numbers[boxNumber].text = "" + Random.Range(1, 26);
-            tempSeconds += Time.deltaTime;
-        }
-        Debug.Log("End of time machine");
-    }
-
-    public void IllustrationSceneTen()
-    {
-        Debug.Log(GameObject.Find("scn_one_time_pad").active);
-
-        if (GameObject.Find("scn_one_time_pad").active)
-        {
-            switch (dialog.currentSentenceDisplayed)
-            {
-                case 1:// No need
-                    break;
-                case 2:// No need
-                    break;
-                case 3:// No need
-
-                    dialog.setProceed(false); // Lock the user from proceeding 
-
-                    while (boy.transform.position.x > 7.0) //Move boy pic:
-                    {
-                        boyRB.MovePosition(boyRB.position + velocity * Time.fixedDeltaTime);
-                    }
-                    while (girl.transform.position.x < -7.0) //Move girl pic:
-                    {
-                        girlRB.MovePosition(girlRB.position + velocity * (-1) * Time.fixedDeltaTime);
-                    }
-                    //If both pictures of the boy and the girl are in place, start to move the envelope until its x position is 4.3:
-                    while (boy.transform.position.x <= 7.0 && girl.transform.position.x >= -7.0 && envelope.transform.position.x < 4.3)
-                    {
-                        envelope.SetActive(true);
-                        envelopeRB.MovePosition(envelopeRB.position + velocity * (-1) * Time.fixedDeltaTime);
-                    }
-
-                    if (envelope.transform.position.x >= 4.3) // If the envelope in its posstion:
-                    {
-                        dialog.setProceed(true); // Let the user continue
-                    }
-
-                    break; // End of case 3
-                case 4:
-
-                    if (helloItIsAnnText.transform.position.y > 3)
-                    {
-                        boy.SetActive(false);
-                        girl.SetActive(false);
-                        envelope.SetActive(false);
-
-                        helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
-                    }
-
-                    break;// End of case 4
-                case 5:
-
-                    if (arrow.transform.position.x < 4)
-                    {
-                        dialog.setProceed(false); // lock the continue button
-                        arrow.SetActive(true); // Show the arrow in the screen
-                        arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
-                    }
-
-                    //This if statment might be outside of the witch, also check if the condition is needed:
-                    if (arrow.transform.position.x >= 3.85)// after the arrow got to the end of the sentence, release the lock
-                    {
-                        dialog.setProceed(true);
-                    }
-
-                    break;// End of case 5
-                case 6:
-
-                    dialog.setProceed(false); // lock the continue button
-
-                    // move the arrow to the first number - for now I chose the easy way 
-                    arrowRB.transform.position = new Vector3(-7.70f, 2.30f);
-                    arrow.SetActive(false);
-
-                    // drag out the text upward
-                    if (helloItIsAnnText.transform.position.y < 8)
-                    {
-                        helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, 5) * Time.fixedDeltaTime);
-                    }
-                    // lower the numbers into the screen
-                    if (squares.transform.position.y > -3) // > 0
-                    {
-                        squaresRB.MovePosition(squaresRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
-                    }
-
-                    if (squares.transform.position.y <= 0) // Show the arrow in it's new postion
-                    {
-                        arrow.SetActive(true);
-                    }
-
-                    /*
-                    //generate a number:
-                    while (timePassed < 5) // giving 2 seconds to generate a number
-                    {
-                        //squares_numbers[0].text = "" + Random.Range(1, 26);
-                        //Debug.Log(squares_numbers[0].text);
-                        Debug.Log(timePassed);
-                        timePassed += Time.deltaTime;
-                    }*/
-
-                    // generate numbers individually or all together
-                    for (int i = 0; i < squares_numbers.Length; i++)
-                    {
-                        TimeMachine(2, i);
-                        //squares_numbers[i].text = "" + Random.Range(1, 26);
-                        /*
-                        //move the arrow:
-                        while (arrow.transform.position.x < arrow.transform.position.x + 20f)
-                        {
-                            arrowRB.MovePosition(arrowRB.position + velocity * (-1) * Time.fixedDeltaTime);
-                        }*/
-                    }
-
-                    break;// End of case 6
-                case 7:
-                    break;// End of case 7
-                case 8:
-                    break;// End of case 8
-                case 9:
-                    break;// End of case 9
-                case 10:
-                    break;// End of case 10
-                case 11:
-                    break;// End of case 11
-                case 12:
-                    break;// End of case 12
-                default:
-                    break;
-            }
-        }
-    }
+    }   
 }
