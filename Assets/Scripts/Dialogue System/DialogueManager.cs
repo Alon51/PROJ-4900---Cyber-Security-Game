@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     public float x_pos_end_portrait     = -12.0f;   //^
 
     private bool proceed = true; //Create a locking mechanism to prevent the user to continue when demonstration in the one time pad is going 
+    private bool finished_typing = false;
 
 	// Use this for initialization
 	void Start()
@@ -121,12 +122,19 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         currentSentenceDisplayed++; // Updating the variable to show the index of the current sentence 
+        finished_typing = false;
 
         text_dialogue.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
             text_dialogue.text += letter;
             yield return null;
+        }
+
+        //Check if both lengths of original sentence is the same as the sentence gets typed:
+        if(text_dialogue.text.Length == sentence.Length)
+        {
+            finished_typing = true;
         }
     }
 
@@ -190,5 +198,10 @@ public class DialogueManager : MonoBehaviour
     public void setProceed(bool x)
     {
         proceed = x;
+    }
+
+    public bool getFinished_typing() // to see if the sentence is finished to be displayed
+    {
+        return finished_typing;
     }
 }

@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Threading;
+using System;
 
 public class MovingImagesAndText : MonoBehaviour {
 
@@ -15,9 +12,17 @@ public class MovingImagesAndText : MonoBehaviour {
     public GameObject envelope;
     public Text helloItIsAnnText;
     public GameObject arrow;
-    public GameObject squares; // To move them as a group, located on top of the window
-    public Text[] squares_numbers ;
     public GameObject sceneTenToCheck;
+    public GameObject blue_frame;
+    public GameObject red_frame;
+    public GameObject green_frame;
+
+    public GameObject squares_random; // To move them as a group, located on top of the window - random
+    public Text[] squaresT_random ;
+    public GameObject squares_original; // To move them as a group, located on top of the window - original
+    public Text[] squaresT_original;
+    public GameObject squares_result; // To move them as a group, located on top of the window - result
+    public Text[] squaresT_result;
 
     //public Text textToMove;
     private Rigidbody2D girlRB;
@@ -25,7 +30,11 @@ public class MovingImagesAndText : MonoBehaviour {
     private Rigidbody2D envelopeRB;
     private Rigidbody2D helloItIsAnnTextRB;
     private Rigidbody2D arrowRB;
-    private Rigidbody2D squaresRB;
+    private Rigidbody2D squares_randomRB;
+    private Rigidbody2D squares_originalRB;
+    private Rigidbody2D squares_resultRB;
+    private Rigidbody2D green_frameRB; // to move the frame up and down
+
     //private Rigidbody2D[] squares_numbersRB;  -------- not sure if we need it, numbers not suppose to move
 
     //public Rigidbody2D texoToMoveRB;
@@ -34,6 +43,7 @@ public class MovingImagesAndText : MonoBehaviour {
     bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
 
     float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
+    byte array_index = 0; 
 
     // Use this for initialization
     void Awake()
@@ -43,7 +53,10 @@ public class MovingImagesAndText : MonoBehaviour {
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
         helloItIsAnnTextRB = helloItIsAnnText.GetComponent<Rigidbody2D>();
         arrowRB = arrow.GetComponent<Rigidbody2D>();
-        squaresRB = squares.GetComponent<Rigidbody2D>();
+        squares_randomRB =   squares_random.GetComponent<Rigidbody2D>();
+        squares_originalRB = squares_original.GetComponent<Rigidbody2D>();
+        squares_resultRB =   squares_result.GetComponent<Rigidbody2D>();
+        green_frameRB = green_frame.GetComponent<Rigidbody2D>();
 
         velocity = new Vector2(-5, 0); // controling the x and y posstion, will move 5 units on the x direction to the left
 
@@ -87,6 +100,8 @@ public class MovingImagesAndText : MonoBehaviour {
         //If the sentennce number displayed is 4 and the position of the text in not at posstion y=3:
         if (dialog.currentSentenceDisplayed == 4 && helloItIsAnnText.transform.position.y > 3)
         {
+            //dialog.setProceed(false); // Lock the user from proceeding
+
             boy.SetActive(false);
             girl.SetActive(false);
             envelope.SetActive(false);
@@ -110,10 +125,9 @@ public class MovingImagesAndText : MonoBehaviour {
         //Sentence 6, generate the numbers
         if (dialog.currentSentenceDisplayed == 6)
         {
-            dialog.setProceed(false); // lock the continue button
-
             if(arrowInPosition)
             {
+                dialog.setProceed(false); // lock the continue button
                 arrowInPosition = !arrowInPosition; // now the varible is false and we won't repeat that again
                 // move the arrow to the first number - for now I chose the easy way 
                 arrowRB.transform.position = new Vector3(-8.3f, 2.30f);
@@ -126,68 +140,129 @@ public class MovingImagesAndText : MonoBehaviour {
                 helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, 5) * Time.fixedDeltaTime);    
             }
             // lower the numbers into the screen
-            if(squares.transform.position.y > -3) // > 0
+            if(squares_random.transform.position.y > -3) // > 0
             {
-                squaresRB.MovePosition(squaresRB.position + new Vector2(0,-5) * Time.fixedDeltaTime);
+                squares_randomRB.MovePosition(squares_randomRB.position + new Vector2(0,-5) * Time.fixedDeltaTime);
             }
 
-            if(squares.transform.position.y <= 0) // Show the arrow in it's new postion
+            if(squares_random.transform.position.y <= 0) // Show the arrow in it's new postion
             {
                 arrow.SetActive(true);  
             }
+
             if (arrowRB.position.x < 7.70f)
             {
                 arrowRB.MovePosition(arrowRB.position + new Vector2(-3, 0) * (-1) * Time.fixedDeltaTime);
 
-                if(arrowRB.position.x > -8f && arrowRB.position.x < -7.8f) // arrow.x >-6.33 and arrow.x < -6.3
+                // Now we're checking the position of the arrow, in order to generate each random number to a squar: 
+                if (arrowRB.position.x > -8f    && arrowRB.position.x < -7.8f) 
                 {
-                    squares_numbers[0].text = "" + Random.Range(1, 26);
+                    squaresT_random[0].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > -6.5f && arrowRB.position.x < -6.3f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > -6.5f  && arrowRB.position.x < -6.3f) 
                 {
-                    squares_numbers[1].text = "" + Random.Range(1, 26);
+                    squaresT_random[1].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > -5.0f && arrowRB.position.x < -4.8f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > -5.0f  && arrowRB.position.x < -4.8f) 
                 {
-                    squares_numbers[2].text = "" + Random.Range(1, 26);
+                    squaresT_random[2].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > -3.7f && arrowRB.position.x < -3.5f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > -3.7f  && arrowRB.position.x < -3.5f) 
                 {
-                    squares_numbers[3].text = "" + Random.Range(1, 26);
+                    squaresT_random[3].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > -2.2f && arrowRB.position.x < -2.0f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > -2.2f  && arrowRB.position.x < -2.0f) 
                 {
-                    squares_numbers[4].text = "" + Random.Range(1, 26);
+                    squaresT_random[4].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > -0.74f && arrowRB.position.x < -0.60f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > -0.74f && arrowRB.position.x < -0.60f) 
                 {
-                    squares_numbers[5].text = "" + Random.Range(1, 26);
+                    squaresT_random[5].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > 0.6f && arrowRB.position.x < 0.74f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 0.6f   && arrowRB.position.x < 0.74f) 
                 {
-                    squares_numbers[6].text = "" + Random.Range(1, 26); // 6
+                    squaresT_random[6].text = "" + UnityEngine.Random.Range(1, 26); 
                 }
-                if (arrowRB.position.x > 2.0f && arrowRB.position.x < 2.2f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 2.0f   && arrowRB.position.x < 2.2f) 
                 {
-                    squares_numbers[7].text = "" + Random.Range(1, 26);
+                    squaresT_random[7].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > 3.5f && arrowRB.position.x < 3.7f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 3.5f   && arrowRB.position.x < 3.7f) 
                 {
-                    squares_numbers[8].text = "" + Random.Range(1, 26);
+                    squaresT_random[8].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > 4.8f && arrowRB.position.x < 5.0f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 4.8f   && arrowRB.position.x < 5.0f) 
                 {
-                    squares_numbers[9].text = "" + Random.Range(1, 26);
+                    squaresT_random[9].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > 6.3f && arrowRB.position.x < 6.5f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 6.3f   && arrowRB.position.x < 6.5f) 
                 {
-                    squares_numbers[10].text = "" + Random.Range(1, 26);
+                    squaresT_random[10].text = "" + UnityEngine.Random.Range(1, 26);
                 }
-                if (arrowRB.position.x > 7.4f && arrowRB.position.x < 7.8f) // arrow.x >-6.33 and arrow.x < -6.3
+                if (arrowRB.position.x > 7.4f   && arrowRB.position.x < 7.8f) 
                 {
-                    squares_numbers[11].text = "" + Random.Range(1, 26);
+                    squaresT_random[11].text = "" + UnityEngine.Random.Range(1, 26);
+                    dialog.setProceed(true); 
+                    blue_frame.SetActive(true);
                 }
             }
+        }
+
+        if(dialog.currentSentenceDisplayed == 7) // The third step to acccumulate the numbers
+        {
+            
+            if (arrow.activeSelf == true)
+            {
+                arrow.SetActive(false);
+                dialog.setProceed(false); // lock the continue button
+            }
+                
+
+            if (squares_result.transform.position.y > -6)
+            {
+                squares_resultRB.MovePosition(squares_resultRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
+            }
+            if (squares_original.transform.position.y > -4.5) // as long that the squars are not in the place continue move:
+            {
+                squares_originalRB.MovePosition(squares_originalRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
+            }
+            else // Squars are in the place so turn on the frames:
+            {
+                if (green_frame.activeSelf == false && red_frame.activeSelf == false)
+                {
+                    red_frame.SetActive(true);
+                    green_frame.SetActive(true);
+                }
+
+                if(squares_result.transform.position.y < -6)
+                    dialog.setProceed(true); // lock the continue button
+            }
+        }
+
+        if (dialog.currentSentenceDisplayed == 8)
+        {
+            if (array_index == 0)
+                dialog.setProceed(false); // lock the continue button
+
+            if(array_index >= 0 && array_index < 12)
+            {
+                squaresT_result[array_index].text = "" + 
+                    ((Int32.Parse(squaresT_random[array_index].text) + Int32.Parse(squaresT_original[array_index].text)) % 26);
+                array_index++;
+            }
+
+            if (array_index == 11)
+                dialog.setProceed(true);
+        }
+
+        if (dialog.currentSentenceDisplayed == 9)
+        {
+            //Sentence 9 is the example, not sure if we want to do something with it.
+        }
+
+        if (dialog.currentSentenceDisplayed == 10)
+        {
+            
         }
     }   
 }
