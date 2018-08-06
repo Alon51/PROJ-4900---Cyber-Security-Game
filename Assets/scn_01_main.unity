@@ -2755,6 +2755,34 @@ MonoBehaviour:
       from Chase, and the email is sent from a trusted email address (@chase.com).
   repeatable: 0
   triggered: 0
+--- !u!1 &192617393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192617394}
+  m_Layer: 0
+  m_Name: Question_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &192617394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 192617393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 764892523}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193669038
 GameObject:
   m_ObjectHideFlags: 0
@@ -8875,6 +8903,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 512451611}
   m_CullTransparentMesh: 0
+--- !u!1 &514268577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514268578}
+  m_Layer: 0
+  m_Name: Question_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514268578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 514268577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 764892523}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516451424
 GameObject:
   m_ObjectHideFlags: 0
@@ -10531,6 +10587,7 @@ Transform:
   - {fileID: 519081132}
   - {fileID: 1653301688}
   - {fileID: 1047474957}
+  - {fileID: 1407124301}
   m_Father: {fileID: 1910564048}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14257,6 +14314,38 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763258587}
   m_CullTransparentMesh: 0
+--- !u!1 &764892522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764892523}
+  m_Layer: 0
+  m_Name: Questions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &764892523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764892522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 192617394}
+  - {fileID: 1242928049}
+  - {fileID: 1881068951}
+  - {fileID: 514268578}
+  m_Father: {fileID: 821240470}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &765250383
 GameObject:
   m_ObjectHideFlags: 0
@@ -15397,6 +15486,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 0}
   m_Children:
   - {fileID: 1910564048}
+  - {fileID: 764892523}
   m_Father: {fileID: 1933946929}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21606,7 +21696,7 @@ GameObject:
   - component: {fileID: 1191478739}
   - component: {fileID: 1191478740}
   m_Layer: 5
-  m_Name: dlg_one_time_pad
+  m_Name: dlg_one_time_pad_illustration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21663,7 +21753,7 @@ MonoBehaviour:
 
       Note that the numbers that will be generated will have to be from 1-26 like
       the number of letters in the alphabet. This random integers are also called
-      the KEY.'
+      the KEY and will be shared with Matt for decryption.'
     - "Third: we will add the each random number (blue rectangle) to it corresponded
       numerical value of the original letter (red rectangle). \nThe result will be
       placed in the green rectangle."
@@ -21676,8 +21766,22 @@ MonoBehaviour:
       with numerical value of 33. So we use the modulo to cycle again.
 
       (23 + 10) % 26 = 7. 7 letters from A.'
-    - 
-    - 
+    - 'Forth: Now Ann needs to transform the numbers into letters and then she will
+      be able to send the encrypted message to Matt.'
+    - 'Here is the encrypted message.
+
+      Each value above correspond to only one letter in the encrypted message.
+
+'
+    - 'Finally, we can compare the encrypted message with the original one.
+
+      Ann did a great job with encrypted her message. '
+    - "Now all Matt has to do is to decrypt Ann's message with the key he got from
+      Ann. \nAnd that's it! Easy right? :)"
+    - 'Try to answer the following qustions to gain most of the points.
+
+
+      Don''t worry it won''t be hard.'
   repeatable: 0
   triggered: 0
 --- !u!1 &1193960719
@@ -21718,6 +21822,7 @@ Transform:
   - {fileID: 680348893}
   - {fileID: 1383124909}
   - {fileID: 1372684181}
+  - {fileID: 1803374412}
   m_Father: {fileID: 1910564048}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22732,6 +22837,34 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1242928048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242928049}
+  m_Layer: 0
+  m_Name: Question_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242928049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242928048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 764892523}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253216400
 GameObject:
   m_ObjectHideFlags: 0
@@ -25333,6 +25466,7 @@ Transform:
   - {fileID: 81575253}
   - {fileID: 32345900}
   - {fileID: 1056056935}
+  - {fileID: 1766057460}
   m_Father: {fileID: 1910564048}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26053,14 +26187,14 @@ RectTransform:
   m_GameObject: {fileID: 1407124300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.307437, y: 1.0093766, z: 0}
+  m_LocalScale: {x: 13.043906, y: 1.0093768, z: 0}
   m_Children: []
-  m_Father: {fileID: 1910564048}
-  m_RootOrder: 11
+  m_Father: {fileID: 585327875}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.08, y: 0.55}
+  m_AnchoredPosition: {x: 1.4080462, y: 4.52}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1407124302
@@ -33090,14 +33224,14 @@ RectTransform:
   m_GameObject: {fileID: 1766057459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.307444, y: 1.0625, z: 0}
+  m_LocalScale: {x: 13.043914, y: 1.0625, z: 0}
   m_Children: []
-  m_Father: {fileID: 1910564048}
-  m_RootOrder: 9
+  m_Father: {fileID: 1380295777}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.08, y: 2.54}
+  m_AnchoredPosition: {x: 1.4080458, y: 4.52}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1766057461
@@ -33709,14 +33843,14 @@ RectTransform:
   m_GameObject: {fileID: 1803374411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.30744, y: 1.009375, z: 0}
+  m_LocalScale: {x: 13.043911, y: 1.009375, z: 0}
   m_Children: []
-  m_Father: {fileID: 1910564048}
-  m_RootOrder: 10
+  m_Father: {fileID: 1193960720}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.08, y: 1.55}
+  m_AnchoredPosition: {x: 1.4080462, y: 4.56}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1803374413
@@ -35295,6 +35429,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1872075128}
   m_CullTransparentMesh: 0
+--- !u!1 &1881068950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881068951}
+  m_Layer: 0
+  m_Name: Question_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1881068951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1881068950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 764892523}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881410881
 GameObject:
   m_ObjectHideFlags: 0
@@ -35986,9 +36148,7 @@ Transform:
   - {fileID: 1380295777}
   - {fileID: 1193960720}
   - {fileID: 585327875}
-  - {fileID: 1766057460}
-  - {fileID: 1803374412}
-  - {fileID: 1407124301}
+  - {fileID: 2053231602}
   m_Father: {fileID: 821240470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36008,6 +36168,7 @@ MonoBehaviour:
   boy: {fileID: 1351706887}
   envelope: {fileID: 737613124}
   helloItIsAnnText: {fileID: 2140537764}
+  encrypted_message: {fileID: 2053231605}
   arrow: {fileID: 1230062198}
   sceneTenToCheck: {fileID: 821240469}
   blue_frame: {fileID: 1766057459}
@@ -36055,6 +36216,7 @@ MonoBehaviour:
   - {fileID: 1505768398}
   - {fileID: 1400073255}
   - {fileID: 1065393686}
+  finished_illustration: 0
 --- !u!1 &1914375633
 GameObject:
   m_ObjectHideFlags: 0
@@ -38426,6 +38588,102 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2028011285}
   m_CullTransparentMesh: 0
+--- !u!1 &2053231601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053231602}
+  - component: {fileID: 2053231604}
+  - component: {fileID: 2053231605}
+  - component: {fileID: 2053231603}
+  m_Layer: 5
+  m_Name: 'EncryptedMessage '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2053231602
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053231601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01716552, y: 0.015428879, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1910564048}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12.37, y: 0.79}
+  m_SizeDelta: {x: 300, y: 55}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!50 &2053231603
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053231601}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
+--- !u!222 &2053231604
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053231601}
+  m_CullTransparentMesh: 0
+--- !u!114 &2053231605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053231601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ec013f3ba876e0a4e9cbc47a9fa60347, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 80
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!1 &2053441913
 GameObject:
   m_ObjectHideFlags: 0
@@ -40069,7 +40327,7 @@ GameObject:
   - component: {fileID: 2140537764}
   - component: {fileID: 2140537766}
   m_Layer: 5
-  m_Name: SecretMessage
+  m_Name: OriginalMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,6 +11,7 @@ public class MovingImagesAndText : MonoBehaviour {
     public GameObject boy;
     public GameObject envelope;
     public Text helloItIsAnnText;
+    public Text encrypted_message;
     public GameObject arrow;
     public GameObject sceneTenToCheck;
     public GameObject blue_frame;
@@ -29,21 +30,21 @@ public class MovingImagesAndText : MonoBehaviour {
     private Rigidbody2D boyRB;
     private Rigidbody2D envelopeRB;
     private Rigidbody2D helloItIsAnnTextRB;
+    private Rigidbody2D encrypted_messageRB;
     private Rigidbody2D arrowRB;
     private Rigidbody2D squares_randomRB;
     private Rigidbody2D squares_originalRB;
     private Rigidbody2D squares_resultRB;
-    private Rigidbody2D green_frameRB; // to move the frame up and down
 
-    //private Rigidbody2D[] squares_numbersRB;  -------- not sure if we need it, numbers not suppose to move
-
-    //public Rigidbody2D texoToMoveRB;
     private Vector2 velocity;
 
     bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
 
     float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
-    byte array_index = 0; 
+    byte array_index = 0;
+    byte encrypted_message_index = 0;
+    String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public bool finished_illustration = false; // To indicate when the illustration has finished
 
     // Use this for initialization
     void Awake()
@@ -52,11 +53,12 @@ public class MovingImagesAndText : MonoBehaviour {
         boyRB = boy.GetComponent<Rigidbody2D>();
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
         helloItIsAnnTextRB = helloItIsAnnText.GetComponent<Rigidbody2D>();
+        encrypted_messageRB = encrypted_message.GetComponent<Rigidbody2D>();
         arrowRB = arrow.GetComponent<Rigidbody2D>();
         squares_randomRB =   squares_random.GetComponent<Rigidbody2D>();
         squares_originalRB = squares_original.GetComponent<Rigidbody2D>();
         squares_resultRB =   squares_result.GetComponent<Rigidbody2D>();
-        green_frameRB = green_frame.GetComponent<Rigidbody2D>();
+        //green_frameRB = green_frame.GetComponent<Rigidbody2D>();
 
         velocity = new Vector2(-5, 0); // controling the x and y posstion, will move 5 units on the x direction to the left
 
@@ -71,7 +73,8 @@ public class MovingImagesAndText : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        //Debug.Log(dialog.getFinished_typing());
+
         if(dialog.currentSentenceDisplayed == 3)
         {
             dialog.setProceed(false); // Lock the user from proceeding 
@@ -100,7 +103,7 @@ public class MovingImagesAndText : MonoBehaviour {
         //If the sentennce number displayed is 4 and the position of the text in not at posstion y=3:
         if (dialog.currentSentenceDisplayed == 4 && helloItIsAnnText.transform.position.y > 3)
         {
-            //dialog.setProceed(false); // Lock the user from proceeding
+            dialog.setProceed(false); // Lock the user from proceeding
 
             boy.SetActive(false);
             girl.SetActive(false);
@@ -109,6 +112,9 @@ public class MovingImagesAndText : MonoBehaviour {
             helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
         }
 
+        if (helloItIsAnnText.transform.position.y < 3 && dialog.getFinished_typing() == true)
+            dialog.setProceed(true);
+        
         //For senctence 5 I possioned the arrow at  x = -3.80 and will move it to  x=3.85
         if (dialog.currentSentenceDisplayed == 5 && arrow.transform.position.x < 4)
         {
@@ -217,7 +223,6 @@ public class MovingImagesAndText : MonoBehaviour {
                 dialog.setProceed(false); // lock the continue button
             }
                 
-
             if (squares_result.transform.position.y > -6)
             {
                 squares_resultRB.MovePosition(squares_resultRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
@@ -239,6 +244,7 @@ public class MovingImagesAndText : MonoBehaviour {
             }
         }
 
+        //Here the calculation of each value in the result squars:
         if (dialog.currentSentenceDisplayed == 8)
         {
             if (array_index == 0)
@@ -246,23 +252,131 @@ public class MovingImagesAndText : MonoBehaviour {
 
             if(array_index >= 0 && array_index < 12)
             {
-                squaresT_result[array_index].text = "" + 
-                    ((Int32.Parse(squaresT_random[array_index].text) + Int32.Parse(squaresT_original[array_index].text)) % 26);
+                //Need to take into consideration 26 % 26 = 0, we can't have 0 in the result so we put 26 instead of the 0:
+                //Created short if stament to handle the situation were 0 can occure 26 % 26. statment ? true : false.
+                squaresT_result[array_index].text = 
+                    ((Int32.Parse(squaresT_random[array_index].text) + Int32.Parse(squaresT_original[array_index].text)) % 26) == 0 ? 
+                    "26" : "" + ((Int32.Parse(squaresT_random[array_index].text) + Int32.Parse(squaresT_original[array_index].text)) % 26);
+                    //"" + ((Int32.Parse(squaresT_random[array_index].text) + Int32.Parse(squaresT_original[array_index].text)) % 26);
                 array_index++;
             }
 
             if (array_index == 11)
+            {
                 dialog.setProceed(true);
+            }
         }
 
         if (dialog.currentSentenceDisplayed == 9)
         {
             //Sentence 9 is the example, not sure if we want to do something with it.
+            if (dialog.getFinished_typing() == false)
+                dialog.setProceed(false);
+            else
+                dialog.setProceed(true);
+
+            if (array_index != 0) // resetting the array index for dialog.currentSentenceDisplayed == 11
+                array_index = 0;
         }
 
         if (dialog.currentSentenceDisplayed == 10)
         {
+            if (dialog.getFinished_typing() == false)
+                dialog.setProceed(false);
             
+            squares_random.SetActive(false);
+            blue_frame.SetActive(false);
+            squares_original.SetActive(false);
+            red_frame.SetActive(false);
+
+            if (squares_result.transform.position.y < -3.1)
+            {
+                squares_resultRB.MovePosition(squares_resultRB.position + new Vector2(0, 5) * Time.fixedDeltaTime);
+            }
+            if(dialog.getFinished_typing())
+            {
+                dialog.setProceed(true);
+            }
+        }
+
+        if (dialog.currentSentenceDisplayed == 11)
+        {
+            if(encrypted_message_index == 5 || encrypted_message_index == 8 || encrypted_message_index == 11) // first checking for the next position of the space
+            {
+                encrypted_message.text += " ";
+            }
+            else if(array_index < 12)// if no space nedded then put the next letter instead:
+            {
+                dialog.setProceed(false);
+
+                //Checking if the array length is not over 12.
+
+                //If the result of the first line plus the second line is equal to the third line then there is no need to cycle again 
+                if ((int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) == int.Parse(squaresT_result[array_index].text))
+                {
+                    Debug.Log("if----  " + ((int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1));
+                    Debug.Log("if----  " + letters[(int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1]); // -1 because its start at 0
+                    encrypted_message.text += letters[(int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1];
+                }
+                else // there has to be a cycle to find the next letter to encrypt
+                {
+                    Debug.Log("else---  " + (int.Parse(squaresT_result[array_index].text) - 1));
+                    Debug.Log("else---  " + letters[int.Parse(squaresT_result[array_index].text) - 1]); // the modulo will return a number that will start from A
+                    encrypted_message.text += letters[int.Parse(squaresT_result[array_index].text) - 1];
+                }
+                array_index++; // can't use array_index to count both the encrypted message and the squars arrays
+            }
+
+            if(encrypted_message_index != 14)
+                encrypted_message_index++;// in the end of the operation rase the index number
+
+            if(encrypted_message_index == 14)
+            {
+                if (encrypted_message.transform.position.x > 0)
+                {
+                    encrypted_messageRB.MovePosition(encrypted_messageRB.position + velocity * Time.fixedDeltaTime);
+                }
+                else
+                {
+                    dialog.setProceed(true);
+                }
+            }
+        }
+
+        if (dialog.currentSentenceDisplayed == 12)
+        {
+            //Pull up the green squers and pull down the original text
+            if(squares_result.transform.position.y < 1)
+                dialog.setProceed(false);
+            
+            if (squares_result.transform.position.y < 1) // squares up
+            {
+                squares_resultRB.MovePosition(squares_resultRB.position + new Vector2(0, 5) * Time.fixedDeltaTime);
+            }
+
+            if (helloItIsAnnText.transform.position.y > 4) // text down
+            {
+                helloItIsAnnTextRB.MovePosition(helloItIsAnnTextRB.position + new Vector2(0, -5) * Time.fixedDeltaTime);
+            }
+
+            if (helloItIsAnnText.transform.position.y > 4)
+            {
+                dialog.setProceed(true);
+                girl.SetActive(true);
+            }
+        }
+        if (dialog.currentSentenceDisplayed == 13)
+        {
+            //girl.SetActive(false);
+            boy.SetActive(true);
+        }
+        if(dialog.currentSentenceDisplayed == 14)
+        {
+            //Start the quiz
+            blackBackground.SetActive(true);
+
+            if(dialog.getFinished_typing()) // reday to move to the quiz
+                finished_illustration = true;
         }
     }   
 }

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class OneTimePadSceneController : MonoBehaviour {
 
@@ -10,16 +7,19 @@ public class OneTimePadSceneController : MonoBehaviour {
     private MovingImagesAndText movingObjects; // object to the script to move images on the screen
 
     private GameObject scn_main;
-    public GameObject demonstademonstration; // drag and drop the the demonstademonstration child object of the scn_one_time_pad
+    public  GameObject demonstademonstration; // drag and drop the Illustration child object of the scn_one_time_pad
+
+    public GameObject questions;
 
 	// Use this for initialization
 	void Awake () {
         
         // displays opening text
-        GameObject.Find("dlg_one_time_pad").GetComponent<DialogueTrigger>().TriggerDialogue();
+        GameObject.Find("dlg_one_time_pad_illustration").GetComponent<DialogueTrigger>().TriggerDialogue();
 
         // glitch animation
-        GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
+        FindObjectOfType<GlitchCamera>().StartGlitch(); //GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
+
 
         //Deactivating the scn_main to show the animation better without the background:
         scn_main = GameObject.Find("scn_main");
@@ -31,55 +31,11 @@ public class OneTimePadSceneController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        switch(dialog.currentSentenceDisplayed)
+        if(questions.activeSelf != true && movingObjects.finished_illustration == true) // if the demonstration is finished then set it to false
         {
-            case(0):
-            {
-                    
-            };break;
-            case (1):
-            {
-
-
-            }; break;
-            case (2):
-            {
-
-
-            }; break;
-            case (3):
-            {
-                demonstademonstration.SetActive(true);
-                //scn_main.SetActive(true);
-            }; break;
-            case (4):
-            {
-
-            }; break;
-            case (5):
-            {
-                //movingObjects.MovingEnvelope();
-            }; break;
-            case (6):
-            {
-                
-            }; break;
-            case (7):
-            {
-                
-            }; break;
-            case (8):
-            {
-
-            }; break;
-            case (9):
-            {
-
-            }; break;
-            case (10):
-            {
-                
-            }; break;
+            demonstademonstration.SetActive(false);
+            questions.SetActive(true);
+            //GameObject.Find("dlg_one_time_pad_questions").GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }
