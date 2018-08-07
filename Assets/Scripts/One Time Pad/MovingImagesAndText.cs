@@ -44,7 +44,6 @@ public class MovingImagesAndText : MonoBehaviour {
     byte array_index = 0;
     byte encrypted_message_index = 0;
     String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public bool finished_illustration = false; // To indicate when the illustration has finished
 
     // Use this for initialization
     void Awake()
@@ -64,6 +63,7 @@ public class MovingImagesAndText : MonoBehaviour {
 
         //Get an access to the DialogueManager script to manage the demonstration according to the line displayed:
         dialog = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
+        //controller = GameObject.Find("OneTimePadSceneController").GetComponent<OneTimePadSceneController>();
 
         blackBackground.SetActive(false); //DO NOT FORGET TO TURN IT ON AT THE END OF THE DEMONSTRATION !!!!!!
         envelope.SetActive(false);// Wait to display the envelope with sentence 4:
@@ -314,14 +314,14 @@ public class MovingImagesAndText : MonoBehaviour {
                 //If the result of the first line plus the second line is equal to the third line then there is no need to cycle again 
                 if ((int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) == int.Parse(squaresT_result[array_index].text))
                 {
-                    Debug.Log("if----  " + ((int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1));
-                    Debug.Log("if----  " + letters[(int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1]); // -1 because its start at 0
+                    //Debug.Log("if----  " + ((int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1));
+                    //Debug.Log("if----  " + letters[(int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1]); // -1 because its start at 0
                     encrypted_message.text += letters[(int.Parse(squaresT_random[array_index].text) + int.Parse(squaresT_original[array_index].text)) - 1];
                 }
                 else // there has to be a cycle to find the next letter to encrypt
                 {
-                    Debug.Log("else---  " + (int.Parse(squaresT_result[array_index].text) - 1));
-                    Debug.Log("else---  " + letters[int.Parse(squaresT_result[array_index].text) - 1]); // the modulo will return a number that will start from A
+                    //Debug.Log("else---  " + (int.Parse(squaresT_result[array_index].text) - 1));
+                    //Debug.Log("else---  " + letters[int.Parse(squaresT_result[array_index].text) - 1]); // the modulo will return a number that will start from A
                     encrypted_message.text += letters[int.Parse(squaresT_result[array_index].text) - 1];
                 }
                 array_index++; // can't use array_index to count both the encrypted message and the squars arrays
@@ -374,9 +374,6 @@ public class MovingImagesAndText : MonoBehaviour {
         {
             //Start the quiz
             blackBackground.SetActive(true);
-
-            if(dialog.getFinished_typing()) // reday to move to the quiz
-                finished_illustration = true;
         }
     }   
 }

@@ -14328,7 +14328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &764892523
 Transform:
   m_ObjectHideFlags: 0
@@ -15502,6 +15502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demonstademonstration: {fileID: 1910564047}
+  questions: {fileID: 764892522}
 --- !u!1 &826710126
 GameObject:
   m_ObjectHideFlags: 0
@@ -36216,7 +36217,6 @@ MonoBehaviour:
   - {fileID: 1505768398}
   - {fileID: 1400073255}
   - {fileID: 1065393686}
-  finished_illustration: 0
 --- !u!1 &1914375633
 GameObject:
   m_ObjectHideFlags: 0

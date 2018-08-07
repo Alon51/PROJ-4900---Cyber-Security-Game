@@ -9,7 +9,7 @@ public class OneTimePadSceneController : MonoBehaviour {
     private GameObject scn_main;
     public  GameObject demonstademonstration; // drag and drop the Illustration child object of the scn_one_time_pad
 
-    public GameObject questions;
+    public GameObject questions; //The object that suppoes to handle the qustions 
 
 	// Use this for initialization
 	void Awake () {
@@ -31,11 +31,10 @@ public class OneTimePadSceneController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(questions.activeSelf != true && movingObjects.finished_illustration == true) // if the demonstration is finished then set it to false
+        if(dialog.currentSentenceDisplayed == 14)
         {
             demonstademonstration.SetActive(false);
             questions.SetActive(true);
-            //GameObject.Find("dlg_one_time_pad_questions").GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 }
