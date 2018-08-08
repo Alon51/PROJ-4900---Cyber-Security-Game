@@ -322,7 +322,11 @@ public class MovingImagesAndText : MonoBehaviour {
                 {
                     //Debug.Log("else---  " + (int.Parse(squaresT_result[array_index].text) - 1));
                     //Debug.Log("else---  " + letters[int.Parse(squaresT_result[array_index].text) - 1]); // the modulo will return a number that will start from A
-                    encrypted_message.text += letters[int.Parse(squaresT_result[array_index].text) - 1];
+                    encrypted_message.text += letters[int.Parse(squaresT_result[array_index].text) - 1]; 
+
+                    /*
+                     * I got index out of range! Check again why if this error come up again
+                    */
                 }
                 array_index++; // can't use array_index to count both the encrypted message and the squars arrays
             }

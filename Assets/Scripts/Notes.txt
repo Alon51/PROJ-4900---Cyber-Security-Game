@@ -381,3 +381,8 @@ From MovingImagesAndText:
         {
 
         }
+
+
+
+
+        //GameObject.FindGameObjectWithTag("scn_main").SetActive(false);

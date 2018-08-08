@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class OneTimePadSceneController : MonoBehaviour {
 
@@ -7,6 +8,9 @@ public class OneTimePadSceneController : MonoBehaviour {
     private MovingImagesAndText movingObjects; // object to the script to move images on the screen
 
     private GameObject scn_main;
+    //public GameObject button_menue;// the button in the main scene that allow you to start over the game
+    //public Text txt_company; // No need for that too
+
     public  GameObject demonstademonstration; // drag and drop the Illustration child object of the scn_one_time_pad
 
     public GameObject questions; //The object that suppoes to handle the qustions 
@@ -20,10 +24,10 @@ public class OneTimePadSceneController : MonoBehaviour {
         // glitch animation
         FindObjectOfType<GlitchCamera>().StartGlitch(); //GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
 
-
         //Deactivating the scn_main to show the animation better without the background:
         scn_main = GameObject.Find("scn_main");
         scn_main.SetActive(false);
+
 
         //Get an access to the DialogueManager script to manage the demonstration according to the line displayed:
         dialog = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
@@ -35,6 +39,8 @@ public class OneTimePadSceneController : MonoBehaviour {
         {
             demonstademonstration.SetActive(false);
             questions.SetActive(true);
+
+            scn_main.SetActive(true);
         }
     }
 }
