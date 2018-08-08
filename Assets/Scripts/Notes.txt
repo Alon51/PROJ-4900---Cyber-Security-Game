@@ -386,3 +386,17 @@ From MovingImagesAndText:
 
 
         //GameObject.FindGameObjectWithTag("scn_main").SetActive(false);
+
+
+                       /* encryptionAmswer += ((int.Parse(squaresT_random[0].text) + 15) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[1].text) + 20) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[2].text) + 16) % 26);
+                encryptionAmswer += " ";
+                encryptionAmswer += ((int.Parse(squaresT_random[3].text) + 20) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[4].text) + 8) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[5].text) + 5) % 26);
+                encryptionAmswer += " ";
+                encryptionAmswer += ((int.Parse(squaresT_random[6].text) + 2) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[7].text) + 5) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[8].text) + 19) % 26);
+                encryptionAmswer += ((int.Parse(squaresT_random[9].text) + 20) % 26);*/

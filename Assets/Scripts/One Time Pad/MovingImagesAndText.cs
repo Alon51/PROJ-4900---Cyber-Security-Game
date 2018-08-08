@@ -38,12 +38,12 @@ public class MovingImagesAndText : MonoBehaviour {
 
     private Vector2 velocity;
 
-    bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
+    private bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
 
-    float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
-    byte array_index = 0;
-    byte encrypted_message_index = 0;
-    String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
+    private byte array_index = 0;
+    private byte encrypted_message_index = 0;
+    private String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // Use this for initialization
     void Awake()
