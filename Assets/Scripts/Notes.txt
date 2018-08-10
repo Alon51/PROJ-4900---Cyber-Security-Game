@@ -497,3 +497,79 @@ case 3:
 
     //public Button trueB;
     //public Button falseB;
+
+
+
+
+
+
+
+
+
+
+
+
+    case(2):
+            {
+                if(bad_event_occured)
+                {
+                    if(mitigate_event)
+                    {
+                        Debug.Log("Bad event mitigated.");
+                        mitigate_event = false;
+                        current_event_text = GoodMessage();
+                        return;
+                    }
+
+                    current_event_text = "Insert bad event here.";
+                } else {
+                    current_event_text = GoodMessage();
+                }
+
+                current_choice_text = "TODO - Month 11 event goes here.." +
+                    "\n<b>Cost: TBD</b>";
+            }; break;
+
+
+
+
+
+
+
+                        // month 11 choice
+            case(2):
+            {
+                if(x)
+                {
+                    current_decision_text = "Month " + current_month + "'s event goes here.";
+
+                    DisplayDecision();
+                } else {
+                    current_decision_text = "You have skipped month " + current_month + "'s event.";
+
+                    DisplayDecision();
+                }
+            }; break;
+            
+
+
+
+
+
+
+
+
+             if(bad_event_occured)
+                {
+                    if(mitigate_event)
+                    {
+                        Debug.Log("Bad event mitigated.");
+                        mitigate_event = false;
+                        current_event_text = GoodMessage();
+                        return;
+                    }
+
+                    current_event_text = "Your system was cracked by experienced hackers because you did not udated your system in a long time.";
+                } else {
+                    current_event_text = GoodMessage();
+                }
