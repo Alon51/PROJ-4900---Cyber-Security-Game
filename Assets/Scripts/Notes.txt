@@ -400,3 +400,100 @@ From MovingImagesAndText:
                 encryptionAmswer += ((int.Parse(squaresT_random[7].text) + 5) % 26);
                 encryptionAmswer += ((int.Parse(squaresT_random[8].text) + 19) % 26);
                 encryptionAmswer += ((int.Parse(squaresT_random[9].text) + 20) % 26);*/
+
+
+
+                                  //}
+                    //else
+                        //encryptionAnswer += letters[((int.Parse(squaresT_random[i].text) + otpTheBest[i]) % 26) - 1];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+case 3:
+                
+                // removes potential capitalization mistakes
+                if (decryptedAnswer.textComponent.text.ToLower() == "hello world")
+                {
+
+                    // play beep sound
+                    GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(1);
+
+                    // increase NP
+                    GameControllerV2.Instance.IncreaseNP(5);
+
+                    // Feedback for correct answer
+                    GameObject.Find("DCorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                else
+                {
+                    // Decrease NP
+                    GameControllerV2.Instance.DecreaseNP(5);
+
+                    // Feedback for incorrect answer
+                    GameObject.Find("DIncorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+
+                // Next round
+                round++;
+                decryptedRound.SetActive(false);
+                bonusRound.SetActive(true);
+
+                break;
+            case 4:
+                
+                // removes potential capitalization mistakes
+                if (bonusAnswer.textComponent.text.ToLower() == "the boss is coming")
+                {
+                    // play beep sound
+                    GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(1);
+
+                    // increase NP
+                    GameControllerV2.Instance.IncreaseNP(25);
+
+                    // Feedback for correct answer
+                    GameObject.Find("BCorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+
+                    // glitch screen
+                    GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
+                }
+                else
+                {
+                    // Decrease NP
+                    GameControllerV2.Instance.DecreaseNP(5);
+
+                    // Feedback for incorrect answer
+                    GameObject.Find("BIncorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+
+                // Next scene
+                GameControllerV2.Instance.scn_one_time_pad.SetActive(false);
+                GameControllerV2.Instance.DisplayDecision();
+                Destroy(this);
+
+                break;
+
+
+
+
+
+    //public bool correct = false; // 3rd question - true false. the buttons the user supposed to click
+    //public bool disable = false; // 3rd question - true false. the buttons the user supposed to click
+
+    //public Button trueB;
+    //public Button falseB;
