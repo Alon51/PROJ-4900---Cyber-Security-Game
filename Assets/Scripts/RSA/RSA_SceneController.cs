@@ -1,25 +1,22 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Experimental.UIElements;
 
-public class RSASceneController : MonoBehaviour {
+public class RSA_SceneController : MonoBehaviour {
 
     //public GameObject obj;
     private DialogueManager dialog;
     private MovingImagesAndText movingObjects; // object to the script to move images on the screen
-
     private GameObject scn_main;
-    //public GameObject button_menue;// the button in the main scene that allow you to start over the game
-    //public Text txt_company; // No need for that too
 
-    public  GameObject demonstademonstration; // drag and drop the Illustration child object of the scn_one_time_pad
-
+    public GameObject demonstademonstration; // drag and drop the Illustration child object of the scn_one_time_pad
     public GameObject questions; //The object that suppoes to handle the qustions 
+    public GameObject menuButton;
 
 	// Use this for initialization
 	void Awake () {
         
         // displays opening text
-        GameObject.Find("dlg_one_time_pad_illustration").GetComponent<DialogueTrigger>().TriggerDialogue();
+        GameObject.Find("dlg_RSA").GetComponent<DialogueTrigger>().TriggerDialogue();
 
         // glitch animation
         FindObjectOfType<GlitchCamera>().StartGlitch(); //GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
@@ -35,12 +32,13 @@ public class RSASceneController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(dialog.currentSentenceDisplayed == 14)
+        if(dialog.currentSentenceDisplayed == 13)
         {
             demonstademonstration.SetActive(false);
             questions.SetActive(true);
 
             scn_main.SetActive(true);
+            menuButton.SetActive(false);
         }
     }
 }
