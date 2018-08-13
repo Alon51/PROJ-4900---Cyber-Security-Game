@@ -40,7 +40,7 @@ public class MovingImagesAndText : MonoBehaviour {
 
     private bool arrowInPosition = true; // In sentence 6, when arrow in postion allow the arrow to go from left to right again.
 
-    private float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
+    //private float timePassed = 0; // For some reason using StartCoroutine() didn't work, had a problem with infinite loop. This varible is to count the time.
     private byte array_index = 0;
     private byte encrypted_message_index = 0;
     private String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

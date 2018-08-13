@@ -11,6 +11,7 @@ public class SceneControllerPhishingV2 : MonoBehaviour {
     public int lives;       // --
     
     void Start() {
+        
         lives = 3;
         
         // displays opening text

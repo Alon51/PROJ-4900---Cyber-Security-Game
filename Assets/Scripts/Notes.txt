@@ -877,3 +877,75 @@ case 3:
             //Start the quiz
             blackBackground.SetActive(true);
         }
+
+
+
+
+        // month 12 event part one
+            case(12):
+            {
+                if(bad_event_occured)
+                {
+                    if(mitigate_event)
+                    {
+                        Debug.Log("Bad event mitigated.");
+                        mitigate_event = false;
+                        current_event_text = GoodMessage();
+                        return;
+                    }
+
+                    current_event_text = "Insert bad event here.";
+                } else {
+                    current_event_text = GoodMessage();
+                }
+
+                int temp_np = network_power;
+
+                IncreaseNP(monthly_np * 2);
+
+                int np_difference = network_power - temp_np; // calculate difference
+
+                current_event_text += "\nQuarter end bonus receieved. " +
+                                       "\n<i>NP has increased by " + np_difference + ".</i>";
+
+                name_perk_1.text = "Promotion (temp)";
+                info_perk_1.text = "Achieve a higher position";
+
+                name_perk_2.text = "Back to School (temp)";
+                info_perk_2.text = "Study for a better job";
+            }; break;
+
+            default: 
+                Debug.Log("default - month 12 part 1"); 
+            break;
+        }
+
+
+
+
+
+
+
+
+         // month 12 choice QUARTER (end of game)
+           case(12):
+            {
+                if(x)
+                {
+                    current_decision_text = "You have chosen perk 1!"; 
+
+                    DisplayDecision();
+                    increased_text.text = "End Game";
+                } else {
+                    current_decision_text = "You have chosen perk 2!";
+
+                    DisplayDecision();
+                    increased_text.text = "End Game";
+                }
+            }; break;
+            
+
+            default: 
+                Debug.Log("month 12 ---- second part"); 
+            break;
+        }
