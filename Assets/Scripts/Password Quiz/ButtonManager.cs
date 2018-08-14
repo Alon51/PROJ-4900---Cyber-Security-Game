@@ -10,7 +10,17 @@ public class ButtonManager : MonoBehaviour {
     public bool correct;
     public bool disable;
 
+    public GoogleAnalyticsV4 googleAnalytics;
+
+    private void Start()
+    {
+        googleAnalytics.StartSession();
+    }
+
     public void message() {
+
+        googleAnalytics.LogScreen("Trying first time GA");
+        googleAnalytics.LogEvent("asfdasf", "asdfasd", "safsf", 33847);
         if (correct) {
             // play a beep sound
             GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(1);
