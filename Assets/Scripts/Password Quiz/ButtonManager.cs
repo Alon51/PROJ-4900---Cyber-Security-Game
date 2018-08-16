@@ -12,11 +12,6 @@ public class ButtonManager : MonoBehaviour {
 
     public GoogleAnalyticsV4 googleAnalytics;
 
-    private void Start()
-    {
-        //googleAnalytics.StartSession();
-    }
-
     public void message() {
 
         googleAnalytics.LogScreen("Main Menu");
