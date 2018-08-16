@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class VirusChoiceManager : MonoBehaviour {
@@ -11,6 +9,7 @@ public class VirusChoiceManager : MonoBehaviour {
     public bool disable;
 
     public void message() {
+        
         if (correct) {
 
             // play a beep sound

@@ -16,8 +16,8 @@ public class GlitchCamera : MonoBehaviour
 
     // glitch script parameters:
     private float ag_slj = 0.0f;    // analog glitch scan line jitter
-    private float ag_vj  = 0.0f;    // -- vertical jump
-    private float ag_hs  = 0.0f;    // -- horizontal shake
+    //private float ag_vj  = 0.0f;    // -- vertical jump        ------->values were never used!
+    //private float ag_hs  = 0.0f;    // -- horizontal shake     ------->values were never used!
     private float ag_cd  = 0.0f;    // -- color drift
     private float dg_i   = 0.0f;    // digital glitch intensity
 

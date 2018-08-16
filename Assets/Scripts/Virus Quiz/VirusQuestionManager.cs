@@ -14,10 +14,12 @@ public class VirusQuestionManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        
         if (aButton.GetComponent<VirusChoiceManager>().disable == true ||
             bButton.GetComponent<VirusChoiceManager>().disable == true ||
             cButton.GetComponent<VirusChoiceManager>().disable == true ||
-            dButton.GetComponent<VirusChoiceManager>().disable == true) {
+            dButton.GetComponent<VirusChoiceManager>().disable == true) 
+        {
             disableButtons();
             next.SetActive(true);
         }

@@ -19,8 +19,6 @@
 ///     deactivate the display box containing the text
 ///
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -32,6 +32,7 @@ public class DialogueTrigger : MonoBehaviour
                 GameControllerV2.Instance.DialogueSwitch();
 
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
                 if(repeatable)
                 {
                     triggered = false;
