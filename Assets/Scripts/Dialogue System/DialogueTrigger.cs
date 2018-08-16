@@ -21,6 +21,18 @@ public class DialogueTrigger : MonoBehaviour
     //check in insepector if dialogue is repeatable or one-time trigger;
     public bool repeatable, triggered = false;
 
+    public GameObject picture;
+
+    private void Start()
+    {
+        picture = GameObject.FindWithTag("IT_picture");
+
+    }
+    private void FixedUpdate()
+    {
+        picture.transform.Rotate(0, 0.05f , 0);
+    }
+
     public void TriggerDialogue()
     {
         // don't start another piece of dialogue if still in one

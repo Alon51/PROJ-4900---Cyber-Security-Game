@@ -31,11 +31,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject portrait;         //^
     public Text text_name;              //^
     public Text text_dialogue;          //^
-    public int currentSentenceDisplayed = -1;// to match the index in the queue, start in -1 and increase 
+    public int currentSentenceDisplayed = -1; // to match the index in the queue, start in -1 and increase 
 
     public GameObject panel;
 
-    private Queue<string> sentences;    //store lines of dialogue
+    //private Queue<string> sentences;    //store lines of dialogue
+    private ArrayList sentencesArrayList;
+    private Stack<string> sentencesStack; //store the lines to make sure I can read them again
+
 
     public float elapsed_time;          //keep track of time for lerping
     public bool has_started;            //check dialogue's state
@@ -52,7 +55,9 @@ public class DialogueManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-        sentences = new Queue<string>(); //FIFO system
+        //sentences = new Queue<string>(); //FIFO system
+        sentencesStack = new Stack<string>(); //LIFO stracture
+        sentencesArrayList = new ArrayList();
 	}
 
     // Allows for enter key to display next sentence
@@ -62,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) 
             {
-                DisplayNextSentence();
+                DisplayNextSentenceArray();// it was DisplayNextSentence()
             }
         }
     }
@@ -78,16 +83,23 @@ public class DialogueManager : MonoBehaviour
 
         text_name.text = dialogue.name;
 
-        sentences.Clear();
+        //sentences.Clear();
+        sentencesArrayList.Clear();
+        sentencesStack.Clear();
 
         foreach(string sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence);
+            //sentences.Enqueue(sentence);
+            sentencesArrayList.Add(sentence);
+            Debug.Log(sentencesArrayList.Count);
+            Debug.Log(sentencesArrayList[sentencesArrayList.Count-1]);
         }
 
-        DisplayNextSentence();
-    }
+        sentencesArrayList.Reverse(); // That will flip the list to start from the first sentence
 
+        DisplayNextSentenceArray(); // it was DisplayNextSentence()
+    }
+    /*
     public void DisplayNextSentence() //When the user clicks the button in the dialoue box
     {
         if(proceed) // In some cases like in the demonstraion of the one time pad - the user can't proceed until demonstration is over for each sentence
@@ -113,15 +125,85 @@ public class DialogueManager : MonoBehaviour
             GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
 
             string sentence = sentences.Dequeue();
+            sentencesStack.Push(sentence); // To save it in the stack 
+
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));   
         }
     }
+    */
+
+    public void DisplayNextSentenceArray() //When the user clicks the button in the dialoue box
+    {
+        if (proceed) // In some cases like in the demonstraion of the one time pad - the user can't proceed until demonstration is over for each sentence
+        {
+            // sentences haven't ended
+            if (!has_ended)
+            {
+                //are there more sentences in the array list?
+                if (sentencesArrayList.Count == 0)
+                {
+                    elapsed_time = 0;
+                    has_ended = true;
+                    has_started = false;
+
+                    // switch out of dialogue
+                    GameControllerV2.Instance.DialogueSwitch();
+
+                    return;
+                }
+            }
+
+            // play a beep sound
+            GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
+
+            string sentence = (string)sentencesArrayList[sentencesArrayList.Count - 1]; // Give the last sentence
+            sentencesArrayList.RemoveAt(sentencesArrayList.Count - 1);// remove from the list
+            sentencesStack.Push(sentence); // To save it in the stack 
+
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
+    }
+
+
+    public void DisplayPrecedingSentence() //When the user clicks the button in the dialoue box
+    {
+        if (proceed) // In some cases like in the demonstraion of the one time pad - the user can't proceed until demonstration is over for each sentence
+        {
+            // sentences haven't ended
+            if (!has_ended)
+            {
+                //are there more sentences in the stack?
+                if (sentencesStack.Count == 0)
+                {
+                    elapsed_time = 0;
+                    has_ended = false; // was true
+                    has_started = true; // was false
+
+                    // switch out of dialogue
+                    //GameControllerV2.Instance.DialogueSwitch(); 
+
+                    return;
+                }
+            }
+
+            // play a beep sound
+            GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
+
+            string sentence = sentencesStack.Pop();//giving the next sentence in the stack
+            sentencesArrayList.Add(sentence); // to read it again when the user pressing next
+
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
+    }
 
     //looping through each character, creating a typewriter effect
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string sentence)//, byte fromArrayOrStack)//fromArrayOrStack - 0 from array 1 from stack
     {
         currentSentenceDisplayed++; // Updating the variable to show the index of the current sentence 
+        //currentSentenceDisplayed = fromArrayOrStack == 0 ? currentSentenceDisplayed + 1 : currentSentenceDisplayed - 1;
         finished_typing = false;
 
         text_dialogue.text = "";

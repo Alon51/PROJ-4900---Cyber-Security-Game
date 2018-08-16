@@ -101,7 +101,7 @@ public class GlitchCamera : MonoBehaviour
         {
             GameObject.Find("scn_title_CONTROL").GetComponent<SceneControllerTitle>().SwitchTitleButtons();
             GameObject.Find("dlg_start").GetComponent<DialogueTrigger>().TriggerDialogue();
-            GameObject.FindObjectOfType<MainUIController>().AdjustMenuOnStart();
+            FindObjectOfType<MainUIController>().AdjustMenuOnStart();
         }
 
         // play a glitch sound

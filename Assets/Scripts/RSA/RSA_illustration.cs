@@ -15,6 +15,7 @@ public class RSA_illustration : MonoBehaviour {
     public GameObject private_frame;
     public GameObject public_frame;
     public GameObject lock_image;
+    public GameObject back_btn;
 
     //Public/private keys:
     private GameObject[] keys;
@@ -56,6 +57,8 @@ public class RSA_illustration : MonoBehaviour {
         envelope.SetActive(false);// Wait to display the envelope with sentence 4:
 
         communication = true;
+
+        back_btn.SetActive(false);
     }
 
     // Update is called once per frame

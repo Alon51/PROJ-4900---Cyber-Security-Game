@@ -11,6 +11,7 @@ TagManager:
   - FirstChoice
   - phishingQuestion
   - scn_main
+  - IT_picture
   layers:
   - Default
   - TransparentFX

@@ -5,10 +5,12 @@ using UnityEngine;
 public class RSA_SceneControllerQuestions : MonoBehaviour
 {
     public int lives;   // when lives = 0, you lose the minigame
+    public GameObject back_btn;
 
     void Start()
     {
         lives = 3;
+        back_btn.SetActive(true);
     }
 
     public void DecreaseLife()

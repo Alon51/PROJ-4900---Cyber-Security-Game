@@ -14,7 +14,7 @@ public class ButtonManager : MonoBehaviour {
 
     public void message() {
 
-        googleAnalytics.LogScreen("Main Menu");
+        //googleAnalytics.LogScreen("Main Menu"); ------------------ need to fix it!!!!!!!!!!------
 
         //googleAnalytics.LogEvent("asfdasf", "asdfasd", "safsf", 33847);
         if (correct) {

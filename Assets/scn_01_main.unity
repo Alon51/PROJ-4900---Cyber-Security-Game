@@ -423,6 +423,7 @@ MonoBehaviour:
       be generated only once for each person.'
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &32345899
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +874,7 @@ MonoBehaviour:
     - Oh no... Try to avoid direct links and broad greetings (Dear Customer)!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &49823557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2068,6 +2070,7 @@ MonoBehaviour:
       world".
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &101206782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2198,7 @@ MonoBehaviour:
     - Be sure to only click on trusted emails!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &103017478
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,6 +2680,7 @@ MonoBehaviour:
       your convenience, you can use the letter to number chart.\nGood luck!"
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &114118601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,6 +3179,7 @@ MonoBehaviour:
       Great job!'
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &126999894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5089,6 +5095,7 @@ MonoBehaviour:
       from Chase, and the email is sent from a trusted email address (@chase.com).
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &193669038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6337,6 +6344,7 @@ MonoBehaviour:
       rendering your backups useless.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &256821235
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,6 +6630,7 @@ MonoBehaviour:
     - Well done! You were able to crack the code!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &263552816
 GameObject:
   m_ObjectHideFlags: 0
@@ -7443,7 +7452,7 @@ MonoBehaviour:
   - {fileID: 1741385543}
   - {fileID: 546117035}
   MusicAudioSources:
-  - {fileID: 1576024009}
+  - {fileID: 419739439}
 --- !u!1 &287073781
 GameObject:
   m_ObjectHideFlags: 0
@@ -7576,6 +7585,7 @@ MonoBehaviour:
     - '[Go to menu to reset game.]'
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &290162691
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,6 +7864,7 @@ MonoBehaviour:
       time spent on this data loss, and error rate increases.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &297715044
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,6 +8222,7 @@ MonoBehaviour:
     - We typically encrypt with a right shift, and decrpyt with a left shift.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &312276211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8426,6 +8438,7 @@ MonoBehaviour:
       event of loss or theft.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &316324325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9053,6 +9066,7 @@ MonoBehaviour:
       sight.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &349192301
 GameObject:
   m_ObjectHideFlags: 0
@@ -9818,6 +9832,7 @@ MonoBehaviour:
       time spent on this data loss, and error rate increases.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &369227494
 GameObject:
   m_ObjectHideFlags: 0
@@ -10495,6 +10510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1576024008}
+  - {fileID: 419739438}
   - {fileID: 589195027}
   - {fileID: 1422448217}
   - {fileID: 1741385542}
@@ -10954,6 +10970,130 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 415686813}
   m_CullTransparentMesh: 0
+--- !u!1 &419739437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419739438}
+  - component: {fileID: 419739439}
+  m_Layer: 0
+  m_Name: bgm_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419739438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419739437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 409922952}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &419739439
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419739437}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 58f93c30a45f948f39a94163dd20e7f3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.75
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &420400645
 GameObject:
   m_ObjectHideFlags: 0
@@ -11159,6 +11299,7 @@ MonoBehaviour:
     - Since data is stored externally, it may be moved around, and lost or stolen.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &429575289
 GameObject:
   m_ObjectHideFlags: 0
@@ -11668,6 +11809,7 @@ MonoBehaviour:
       the numbers must envolve the mod operation."
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &434417037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11875,6 +12017,7 @@ MonoBehaviour:
     - Well done! You managed to decrypt the text.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &439870909
 GameObject:
   m_ObjectHideFlags: 0
@@ -12958,8 +13101,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.3999996, y: 100}
-  m_SizeDelta: {x: 755, y: 55}
+  m_AnchoredPosition: {x: -185.05003, y: 100}
+  m_SizeDelta: {x: 370.1, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470645239
 MonoBehaviour:
@@ -14771,6 +14914,7 @@ MonoBehaviour:
       the game.\nEnjoy and good luck!"
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &526829204
 GameObject:
   m_ObjectHideFlags: 0
@@ -15026,6 +15170,7 @@ MonoBehaviour:
       no urgency to "reset everything now!"
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &534514231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15378,7 +15523,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409922952}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &546117035
 AudioSource:
@@ -15699,6 +15844,7 @@ MonoBehaviour:
       Droppers are used to "drop" other threats onto your computer/.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &560565791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16121,6 +16267,7 @@ MonoBehaviour:
       and links to rewards are signs of dangerous emails.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &575870360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16444,7 +16591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409922952}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &589195028
 AudioSource:
@@ -16594,6 +16741,7 @@ MonoBehaviour:
     - Thanks to your backup choices, you have other means of recovering this data!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &593901244
 GameObject:
   m_ObjectHideFlags: 0
@@ -17285,6 +17433,7 @@ MonoBehaviour:
       and be wary of links for "rewards".
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &613696710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17690,6 +17839,7 @@ MonoBehaviour:
       often difficult to detect. '
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &627993164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18322,6 +18472,7 @@ MonoBehaviour:
       and studies attempts to gain unauthorized access.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &666030876
 GameObject:
   m_ObjectHideFlags: 0
@@ -19680,6 +19831,7 @@ MonoBehaviour:
     - Thanks to your backup choices, you have other means of recovering this data!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &686493173
 GameObject:
   m_ObjectHideFlags: 0
@@ -20457,6 +20609,7 @@ MonoBehaviour:
       was "xvywx rsfshc".
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &714120032
 GameObject:
   m_ObjectHideFlags: 0
@@ -20839,6 +20992,7 @@ MonoBehaviour:
       For now, please solve the following questions.'
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &724729666
 GameObject:
   m_ObjectHideFlags: 0
@@ -21931,6 +22085,7 @@ MonoBehaviour:
     - Thanks to your backup choices, you have other means of recovering this data!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &767888387
 GameObject:
   m_ObjectHideFlags: 0
@@ -22512,6 +22667,7 @@ MonoBehaviour:
       sight.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &796137903
 GameObject:
   m_ObjectHideFlags: 0
@@ -23137,6 +23293,7 @@ MonoBehaviour:
       such machines are often referred to as "botnets"
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &815815579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23861,6 +24018,7 @@ MonoBehaviour:
     - 
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &824147172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24330,6 +24488,7 @@ MonoBehaviour:
       be rendered useless.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &849091193
 GameObject:
   m_ObjectHideFlags: 0
@@ -26027,7 +26186,7 @@ GameObject:
   - component: {fileID: 921793556}
   m_Layer: 5
   m_Name: spr_it_senior
-  m_TagString: Untagged
+  m_TagString: IT_picture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26461,6 +26620,7 @@ MonoBehaviour:
     - Well done! You managed to encrypt the text.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &942135919
 GameObject:
   m_ObjectHideFlags: 0
@@ -28148,6 +28308,7 @@ MonoBehaviour:
       and does not push you to perform any urgent tasks.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &996476072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28706,6 +28867,7 @@ RectTransform:
   - {fileID: 921793555}
   - {fileID: 470645238}
   - {fileID: 1536269673}
+  - {fileID: 1349136209}
   - {fileID: 1466673287}
   m_Father: {fileID: 1933946929}
   m_RootOrder: 13
@@ -31899,6 +32061,7 @@ MonoBehaviour:
       such as losing your account permanently if no action is taken.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1131144270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31966,6 +32129,7 @@ MonoBehaviour:
     - Hopefully you didn't miss the presentation on various types of viruses...
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1146398383
 GameObject:
   m_ObjectHideFlags: 0
@@ -33058,6 +33222,7 @@ MonoBehaviour:
       Don''t worry it won''t be hard.'
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1192887273
 GameObject:
   m_ObjectHideFlags: 0
@@ -33248,6 +33413,7 @@ MonoBehaviour:
       time spent on this data loss.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1200938291
 GameObject:
   m_ObjectHideFlags: 0
@@ -33559,6 +33725,7 @@ MonoBehaviour:
     - 
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1204842250
 GameObject:
   m_ObjectHideFlags: 0
@@ -34639,6 +34806,7 @@ MonoBehaviour:
       relationhsip between the keys is what makes the connection to be secured."
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1249472707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35053,6 +35221,7 @@ MonoBehaviour:
     - Well done! You successfully managed to encrypt the text!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1259592805
 GameObject:
   m_ObjectHideFlags: 0
@@ -35556,6 +35725,7 @@ MonoBehaviour:
       your name is really you.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1273057556
 GameObject:
   m_ObjectHideFlags: 0
@@ -37387,6 +37557,7 @@ MonoBehaviour:
       security holes and bugs.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1338838847
 GameObject:
   m_ObjectHideFlags: 0
@@ -37767,6 +37938,17 @@ MonoBehaviour:
       time spent on this data loss.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
+--- !u!1 &1349136208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1574934282474006, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1429567585}
+--- !u!224 &1349136209 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1429567585}
 --- !u!1 &1349736505
 GameObject:
   m_ObjectHideFlags: 0
@@ -37947,6 +38129,7 @@ MonoBehaviour:
       greetings (Dear Customer).
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1349736512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38099,6 +38282,7 @@ MonoBehaviour:
       boss is coming"!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1362080839
 GameObject:
   m_ObjectHideFlags: 0
@@ -40011,6 +40195,7 @@ MonoBehaviour:
       email comes from a trusted address (@chase.com).
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1421257000
 GameObject:
   m_ObjectHideFlags: 0
@@ -40079,6 +40264,7 @@ MonoBehaviour:
       if you need to!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1422448216
 GameObject:
   m_ObjectHideFlags: 0
@@ -40106,7 +40292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409922952}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1422448218
 AudioSource:
@@ -40457,6 +40643,147 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428009783}
   m_CullTransparentMesh: 0
+--- !u!1001 &1429567585
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1014968570}
+    m_Modifications:
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 344.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 100.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 52.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224898435482393874, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: d125731270c6d4e7595f2c500c3c0441,
+        type: 3}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1225391708}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayPrecedingSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021813760318976, guid: 931b440b1311b4264a1f68b3ebc3c66c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 931b440b1311b4264a1f68b3ebc3c66c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1430839604
 GameObject:
   m_ObjectHideFlags: 0
@@ -41503,7 +41830,7 @@ RectTransform:
   m_Children:
   - {fileID: 385371610}
   m_Father: {fileID: 1014968570}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41551,7 +41878,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1225391708}
-        m_MethodName: DisplayNextSentence
+        m_MethodName: DisplayNextSentenceArray
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41636,6 +41963,7 @@ MonoBehaviour:
       time spent on this data loss, and error rate increases.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1472771929
 GameObject:
   m_ObjectHideFlags: 0
@@ -42403,6 +42731,7 @@ MonoBehaviour:
     - Let's see how you do with this basic method..
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1487395943
 GameObject:
   m_ObjectHideFlags: 0
@@ -42950,6 +43279,7 @@ MonoBehaviour:
       such as losing your account permanently if no action is taken.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1500240494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44708,6 +45038,7 @@ MonoBehaviour:
     - Thanks to your backup choices, you have other means of recovering this data!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1545049499
 GameObject:
   m_ObjectHideFlags: 0
@@ -48413,6 +48744,7 @@ MonoBehaviour:
       help remove the threats.
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1713099453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49265,7 +49597,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 409922952}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1741385543
 AudioSource:
@@ -50040,6 +50372,7 @@ MonoBehaviour:
       if you need to!
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1762586397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50789,6 +51122,7 @@ MonoBehaviour:
     - Thanks to your backup choices, you have other means of recovering this data!
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1803374411
 GameObject:
   m_ObjectHideFlags: 0
@@ -52160,6 +52494,7 @@ MonoBehaviour:
       malicious activity by detecting the target and removing it
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &1863045307
 GameObject:
   m_ObjectHideFlags: 0
@@ -52221,6 +52556,7 @@ MonoBehaviour:
       3. Contains at least one special symbol (@, #, $, and etc.)'
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!114 &1863045310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53835,6 +54171,7 @@ MonoBehaviour:
   blue_frame: {fileID: 1766057459}
   red_frame: {fileID: 1803374411}
   green_frame: {fileID: 1407124300}
+  back_btn_inDialogBox: {fileID: 1349136208}
   squares_random: {fileID: 1380295776}
   squaresT_random:
   - {fileID: 1794867529}
@@ -56889,6 +57226,7 @@ MonoBehaviour:
       modulos when you're calculating the numbers. \nTry again next time!"
   repeatable: 1
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &2012693752
 GameObject:
   m_ObjectHideFlags: 0
@@ -58554,6 +58892,7 @@ MonoBehaviour:
     - At any time, click the Continue button to carry on to the next month.
   repeatable: 0
   triggered: 0
+  picture: {fileID: 0}
 --- !u!1 &2089118266
 GameObject:
   m_ObjectHideFlags: 0
@@ -58595,6 +58934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  back_btn: {fileID: 1349136208}
 --- !u!1 &2090223577
 GameObject:
   m_ObjectHideFlags: 0
@@ -59100,6 +59440,7 @@ MonoBehaviour:
   private_frame: {fileID: 893769174}
   public_frame: {fileID: 2146160837}
   lock_image: {fileID: 486061123}
+  back_btn: {fileID: 1349136208}
   key_1: {fileID: 189212041}
   key_2: {fileID: 402340473}
   key_3: {fileID: 1901237425}

@@ -17,6 +17,7 @@ public class MovingImagesAndText : MonoBehaviour {
     public GameObject blue_frame;
     public GameObject red_frame;
     public GameObject green_frame;
+    public GameObject back_btn_inDialogBox;
 
     public GameObject squares_random; // To move them as a group, located on top of the window - random
     public Text[] squaresT_random ;
@@ -68,12 +69,13 @@ public class MovingImagesAndText : MonoBehaviour {
         blackBackground.SetActive(false); //DO NOT FORGET TO TURN IT ON AT THE END OF THE DEMONSTRATION !!!!!!
         envelope.SetActive(false);// Wait to display the envelope with sentence 4:
         arrow.SetActive(false);
+        back_btn_inDialogBox.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log(dialog.getFinished_typing());
+        //Debug.Log(dialog.currentSentenceDisplayed);
 
         if(dialog.currentSentenceDisplayed == 3)
         {
