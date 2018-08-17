@@ -1456,8 +1456,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Yes, there is no encryption that cannot be break using brought force attack.
-    The problem is that it takes too long to decrypt without keys '
+  m_Text: Yes, there is no encryption that is not susceptible to a brought force attack.
+    The only problem is that it takes too long to decrypt without the keys
 --- !u!222 &82182336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1772,7 +1772,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What's the term "Asymetric" means? In relation to RSA.
+  m_Text: "What does the term \u201CAsymmetric\u201D mean in relation to RSA?"
 --- !u!222 &85185188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10384,7 +10384,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Both receiver public and sender private keys, they have an important role
+  m_Text: Both receiver public & sender private keys, they have an important role
     in the encryption
 --- !u!222 &386114716
 CanvasRenderer:
@@ -16263,8 +16263,8 @@ MonoBehaviour:
   dialogue:
     name: IT Senior
     sentences:
-    - Be careful of emails such as this! Things like the email address (AmazonUpdate@efficaciousrbays.xyz)
-      and links to rewards are signs of dangerous emails.
+    - Good job! Pay attention to what email you are receiving a message from (@efficaciousrbays.xyz)
+      and be wary of links for "rewards".
   repeatable: 0
   triggered: 0
   picture: {fileID: 0}
@@ -17429,8 +17429,8 @@ MonoBehaviour:
   dialogue:
     name: IT Senior
     sentences:
-    - Good job! Pay attention to what email you are receiving a message from (@efficaciousrbays.xyz)
-      and be wary of links for "rewards".
+    - Be careful of emails such as this! Things like the email address (AmazonUpdate@efficaciousrbays.xyz)
+      and links to rewards are signs of dangerous emails.
   repeatable: 0
   triggered: 0
   picture: {fileID: 0}
@@ -18881,8 +18881,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: No! It's the strongest algorithm we have. For years the best hackers in
-    the world been trying to hack the algorithm and never succeed
+  m_Text: "No it\u2019s the strongest algorithm we have. For years the best hackers
+    in the world have been trying to hack algorithms without success"
 --- !u!222 &675514406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20966,24 +20966,24 @@ MonoBehaviour:
     - We created a demonstration to help you have a better understanding.
     - 'We start with a general explentation of the RSA. Assuming we have Alice and
       Bob and both want to communicate using RSA. '
-    - 'We first need to remember that their communication envolve 4 differnet keys.
+    - 'We first need to remember that their communication involves 4 different keys.
       Alice''s private and public key and Bob''s private and public key.
 
-      **Their public keys are known to everyone not just for both of them**'
+      Note: Their public keys are known by everyone, not just them'
     - "Let's take a look at the process of safe communication between the two using
       RSA encruption.\t"
     - 'Lets say that Bob wants to send a message to Alice. Bob will start with a plain
       text which is the message he would like to encrypt. '
     - Then Bob will use his Private key to encrypt the message.
     - Then Bob will use Alice's public key to encrypt the message again.
-    - "Now the message is ready to be send to Alice! \nNote that this message can
-      get to the wrong hands for example to the hands of a hacker, but still it will
-      be extremely complicated to decrypt it (timewise) without the necessary keys."
-    - 'When Alice will get the message she will decrypt it with her own private key
-      and then with Bob''s public key.
+    - 'Now the message is ready to be sent to Alice!
 
-      Note that it''s actually the opposite from the encrypting process where Bob
-      used his private key and Alice''s public key.'
+      Note that this message could land in the wrong hands, for example a hacker,
+      but even in that scenario it would be extremely complicated to decrypt the message,
+      time-wise speaking, without the necessary keys.'
+    - "Once Alice gets the message she will decrypt it with her own private key and
+      then with Bob\u2019s public key.\nNote that it's actually the opposite from
+      the encrypting process where Bob used his private key and Alice's public key."
     - 'That''s it! Simple right?
 
       In the next lesson on RSA we will teach you how to actually constract a key
@@ -21737,8 +21737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The public key, because it's also contain the address of the receiver of
-    the message
+  m_Text: The public key, because it contains the address of the receiver of the message
 --- !u!222 &755597339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25455,8 +25454,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Two - the person I am communicating with and the hacker that listen to the
-    connection
+  m_Text: 'Two: the person I am communicating with and the hacker who may be secretly
+    listening'
 --- !u!222 &892265709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37000,8 +36999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Non - public key is like the name suggest, avoid beeing exposure to the
-    public
+  m_Text: 'None: the public key is like the name suggests, avoid public exposure'
 --- !u!222 &1316763990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45311,7 +45309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Any one - that's the purpose of public key
+  m_Text: "Anyone: that\u2019s the purpose of the public key"
 --- !u!222 &1553292557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45513,7 +45511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Which key will be use to encrypt a secret message that I would like to send?
+  m_Text: Which key should I use to encrypt a secret message?
 --- !u!222 &1569078835
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55529,8 +55527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.15, y: 1.7}
-  m_SizeDelta: {x: 2.5, y: 3}
+  m_AnchoredPosition: {x: 7.508, y: 1.7}
+  m_SizeDelta: {x: 3.216, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1956194967
 Rigidbody2D:
@@ -55571,7 +55569,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5f5b7b9b60d9f409b8ef5d07852bc067, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ee9c55ee8ee244a29a20c6089a8a283, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -57122,8 +57120,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.13, y: 1.71}
-  m_SizeDelta: {x: 2, y: 3}
+  m_AnchoredPosition: {x: -8.268, y: 1.71}
+  m_SizeDelta: {x: 2.277, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &2007023742
 Rigidbody2D:
@@ -57164,7 +57162,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6e7aa7c6f1f2b4466ba5ab9be34d3eb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03a94db5d0ee04c908a8356b0b6fdf48, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58406,7 +58404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To how many people my public key is known?
+  m_Text: To how many people is my public key known?
 --- !u!222 &2061627650
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59644,7 +59642,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Can RSA encryption be breakable?
+  m_Text: Is RSA encryption breakable?
 --- !u!222 &2114535911
 CanvasRenderer:
   m_ObjectHideFlags: 0

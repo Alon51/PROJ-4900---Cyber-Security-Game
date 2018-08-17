@@ -158,7 +158,7 @@ public class DialogueManager : MonoBehaviour
             GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
 
             string sentence = (string)sentencesArrayList[sentencesArrayList.Count - 1]; // Give the last sentence
-            sentencesArrayList.RemoveAt(sentencesArrayList.Count - 1);// remove from the list
+            sentencesArrayList.RemoveAt(sentencesArrayList.Count - 1);// remove last element from the list
             sentencesStack.Push(sentence); // To save it in the stack 
 
             StopAllCoroutines();
