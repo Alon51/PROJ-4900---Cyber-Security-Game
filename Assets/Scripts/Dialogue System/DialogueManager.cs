@@ -91,8 +91,8 @@ public class DialogueManager : MonoBehaviour
         {
             //sentences.Enqueue(sentence);
             sentencesArrayList.Add(sentence);
-            Debug.Log(sentencesArrayList.Count);
-            Debug.Log(sentencesArrayList[sentencesArrayList.Count-1]);
+            //Debug.Log(sentencesArrayList.Count);
+            //Debug.Log(sentencesArrayList[sentencesArrayList.Count-1]);
         }
 
         sentencesArrayList.Reverse(); // That will flip the list to start from the first sentence
