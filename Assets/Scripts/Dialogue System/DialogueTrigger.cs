@@ -21,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     //check in insepector if dialogue is repeatable or one-time trigger;
     public bool repeatable, triggered = false;
 
-    public GameObject picture;
+    public GameObject picture; // the IT logo
 
     private void Start()
     {

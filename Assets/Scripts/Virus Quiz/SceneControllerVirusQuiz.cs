@@ -26,9 +26,7 @@ public class SceneControllerVirusQuiz : MonoBehaviour {
             GameObject.FindObjectOfType<GlitchCamera>().StartGlitch();
 
             // punishment
-            GameControllerV2.Instance.current_decision_text = "Your employees failed to " +
-                "learn how to distinguish phishing emails. " +
-                "<i>Error rate has increased.</i>";
+            GameControllerV2.Instance.current_decision_text = "Your employees failed the quiz!" + "\n<i>Error rate has increased.</i>";
             // error rate increased by 5-10%
             // TODO: may need adjustments
             float rand_er = Random.Range(0.05f, 0.1f);

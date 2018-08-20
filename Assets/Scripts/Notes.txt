@@ -949,3 +949,16 @@ case 3:
                 Debug.Log("month 12 ---- second part"); 
             break;
         }
+
+
+
+
+
+
+
+
+
+        // Feedback for correct answer
+        //GameObject.Find("ECorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+
+        //GameObject.Find("EIncorrect").GetComponent<DialogueTrigger>().TriggerDialogue();

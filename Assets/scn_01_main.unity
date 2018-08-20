@@ -15255,7 +15255,7 @@ MonoBehaviour:
       also prone to more security problems
     - Don't worry, I'll be here to help you out.
     - "In the following screen please choose one of the companies you would like to
-      work for. \nBe aware! You will not be able to change your decision throughot
+      work for. \nBe aware! You will not be able to change your decision throughout
       the game.\nEnjoy and good luck!"
   repeatable: 0
   triggered: 0
@@ -19247,8 +19247,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "No it\u2019s the strongest algorithm we have. For years the best hackers
-    in the world have been trying to hack algorithms without success"
+  m_Text: No, RSA can't be cracked because the only way to decrypt a message can be
+    done only with the correct keys
 --- !u!222 &675514406
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21415,8 +21415,8 @@ MonoBehaviour:
       the encrypting process where Bob used his private key and Alice's public key."
     - 'That''s it! Simple right?
 
-      In the next lesson on RSA we will teach you how to actually constract a key
-      using prime numbers.
+      What you have learned so far is only the theory but in practice the RSA involves
+      combinations of prime numbers. Explore it on your own, it''s very interesting.
 
       For now, please solve the following questions.'
   repeatable: 0
@@ -33879,10 +33879,11 @@ MonoBehaviour:
       But do not worry we will show you a simpler way of performing the addition correctly.
 
 '
-    - 'For example: the numerical value of the letter ''X'' is 24. If we will add
-      a random number 4 to it the result will be 28. Since we don''t have a letter
-      corresponded to 28, we will count normally and after the letter Z we will move
-      to A again and continue counting. X --> Y --> Z --> A --> B  '
+    - "For Example: The numerical value of the letter 'X' is 24. If we add a random
+      number 4 to it the result will be 28. Since we don't have a letter corresponded
+      to 28 due to the fact that the ABC goes up to 26, we will continue our count
+      after the letter \u2019Z\u2019 normally by moving to the beginning again and
+      staring with \u2019A.\u2019   X-->Y-->Z-->A-->B"
     - 'Forth: Now Ann needs to transform the numbers into letters and then she will
       be able to send the encrypted message to Matt.'
     - 'Here is the encrypted message.
@@ -37315,7 +37316,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 88lucKy
+  m_Text: 
 --- !u!222 &1299644852
 CanvasRenderer:
   m_ObjectHideFlags: 0
