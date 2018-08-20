@@ -12087,7 +12087,7 @@ MonoBehaviour:
   dialogue:
     name: IT Senior
     sentences:
-    - "Remember, the idea behind OTP is the random numbers. \nAlso, the sddition of
+    - "Remember, the idea behind OTP is the random numbers. \nAlso, the addition of
       the numbers must envolve the mod operation."
   repeatable: 1
   triggered: 0
@@ -33868,21 +33868,21 @@ MonoBehaviour:
     - "Fitst: Ann will have to count how many letters she has in the sentence. As
       we can see, in this sentence we have 12 letters. \nNote  that the structure
       of the sentence will stay the same before and after the encryption."
+    - 'Second: Ann will generate 12 random numbers that will correspond to each letter
+      in the original message.
+
+      Note, this is also called the "key" and it will be shared with the recipient.'
     - 'Third: we will add each random number (represented by the blue row) to its
       corresponding numerical value of the original letter (represented by the red
-      row). Results will be added to the green row.'
-    - 'Third: we will add each random number (represented by the blue column) to its
-      corresponding numerical value of the original letter (represented by the red
-      column). Results will be added to the green column'
+      row). Results will be added to the green row. Each column individually.'
     - 'The technique is to combine the key and the message using modular addition.
-      The numerical values of corresponding message and key letters are added together,
-      modulo 26.
+      But do not worry we will show you a simpler way of performing the addition correctly.
 
 '
-    - 'For example: the numbers 23 + 10 will give you 33, as we know there is no letter
-      with numerical value of 33. So we use the modulo to cycle again.
-
-      (23 + 10) % 26 = 7. 7 letters from A.'
+    - 'For example: the numerical value of the letter ''X'' is 24. If we will add
+      a random number 4 to it the result will be 28. Since we don''t have a letter
+      corresponded to 28, we will count normally and after the letter Z we will move
+      to A again and continue counting. X --> Y --> Z --> A --> B  '
     - 'Forth: Now Ann needs to transform the numbers into letters and then she will
       be able to send the encrypted message to Matt.'
     - 'Here is the encrypted message.
