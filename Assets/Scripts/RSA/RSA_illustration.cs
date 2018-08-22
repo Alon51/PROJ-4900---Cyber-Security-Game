@@ -178,7 +178,7 @@ public class RSA_illustration : MonoBehaviour {
 
         if (dialog.currentSentenceDisplayed == 12)
         {
-            if (key_1.transform.position.x <= 0) //Move key to the right
+            /*if (key_1.transform.position.x <= 0) //Move key to the right
             {
                 dialog.setProceed(false);
                 key_1RB.MovePosition(key_1RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
@@ -191,7 +191,14 @@ public class RSA_illustration : MonoBehaviour {
                 }
                 else
                     dialog.setProceed(true);
-            }
+            }*/
+
+            /*
+             * The text for sentence 12 in the dialouge box:
+             * Once Alice gets the message she will decrypt it with her own private key and then with Bob’s public key.
+             * Note that it's actually the opposite from the encrypting process where Bob used his private key and Alice's 
+             * public key.
+            */
         }
 
         if (dialog.currentSentenceDisplayed == 14)

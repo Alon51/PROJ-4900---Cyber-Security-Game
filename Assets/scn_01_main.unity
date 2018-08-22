@@ -21410,9 +21410,9 @@ MonoBehaviour:
       Note that this message could land in the wrong hands, for example a hacker,
       but even in that scenario it would be extremely complicated to decrypt the message,
       time-wise speaking, without the necessary keys.'
-    - "Once Alice gets the message she will decrypt it with her own private key and
-      then with Bob\u2019s public key.\nNote that it's actually the opposite from
-      the encrypting process where Bob used his private key and Alice's public key."
+    - Now Bob can be confident that only Alice will see the message because she's
+      the only one that holds the correct private key that associated with her publlic
+      key. That ensure confidentiality which is the first layer of encryption.
     - 'That''s it! Simple right?
 
       What you have learned so far is only the theory but in practice the RSA involves

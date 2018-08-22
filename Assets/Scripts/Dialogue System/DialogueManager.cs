@@ -203,7 +203,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)//, byte fromArrayOrStack)//fromArrayOrStack - 0 from array 1 from stack
     {
         currentSentenceDisplayed++; // Updating the variable to show the index of the current sentence 
-        //currentSentenceDisplayed = fromArrayOrStack == 0 ? currentSentenceDisplayed + 1 : currentSentenceDisplayed - 1;
+
         finished_typing = false;
 
         text_dialogue.text = "";
@@ -229,14 +229,14 @@ public class DialogueManager : MonoBehaviour
             panel.GetComponent<Image>().raycastTarget = true;
             panel.GetComponent<Image>().DOColor(new Color32(50, 50, 50, 150), 0.5f);
 
-            elapsed_time += Time.deltaTime;
+            elapsed_time += Time.deltaTime * 4.0f;
 
             //dialogue box start:
             Vector2 current_pos = dialogue_box.transform.position;
             dialogue_box.transform.position = Vector2.Lerp(
                 current_pos,
                 new Vector2(x_pos_start_box, current_pos.y),
-                0.5f * elapsed_time);
+               0.5f * elapsed_time); 
 
             //portrait start:
             /*Vector2 current_pos_portait = portrait.transform.position;
