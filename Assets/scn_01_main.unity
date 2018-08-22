@@ -1476,8 +1476,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yes, there is no encryption that is not susceptible to a brought force attack.
-    The only problem is that it takes too long to decrypt without the keys
+  m_Text: Yes, In theory, it's possible, but it takes a long time if you don't know
+    the key values.
 --- !u!222 &82182336
 CanvasRenderer:
   m_ObjectHideFlags: 0

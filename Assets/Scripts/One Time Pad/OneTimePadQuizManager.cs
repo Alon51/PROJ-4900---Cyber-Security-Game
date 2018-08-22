@@ -76,14 +76,14 @@ public class OneTimePadQuizManager : MonoBehaviour {
                             encryptionAnswer += letters[((int.Parse(squaresT_random[i].text) + otpTheBest[i]) % 26) - 1];
                     }
                     
-                    // removes potential capitalization mistakes
+                    // comparing on the left the user input and on the right the computer solution 
                     if (encryptedAnswer.textComponent.text.ToLower() == encryptionAnswer.ToLower()) //Answer correct:
                     {
                         // play beep sound
                         GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(1);
                         
                         // increase NP
-                        GameControllerV2.Instance.IncreaseNP(5);
+                        GameControllerV2.Instance.IncreaseNP(10);
                         
                         // Feedback for correct answer
                         //inputForDialogue = new string[1];// The sentence to display in the dialogue 
@@ -97,14 +97,31 @@ public class OneTimePadQuizManager : MonoBehaviour {
                     }
                     else // answer is not correct:
                     {
+
+                        byte counter = 0;
+                        //comparing the two solutions (user VS computer) to see who has shortest answer:
+                        byte chooseOne = encryptedAnswer.textComponent.text.ToLower().Length <= 11 ? 
+                                                        (byte) encryptedAnswer.textComponent.text.ToLower().Length : (byte) 11;
+                                                          
+                        for (byte i = 0; i <= chooseOne; i++)
+                        {
+                            //Debug.Log(encryptedAnswer.textComponent.text.ToLower()[i] + " ---1--- " + encryptionAnswer.ToLower()[i]);
+                            if (encryptedAnswer.textComponent.text.ToLower()[i] == encryptionAnswer.ToLower()[i])
+                            {
+                                //Debug.Log(encryptedAnswer.textComponent.text.ToLower()[i] + " ---1 S--- " + encryptionAnswer.ToLower()[i]);
+                                if(encryptedAnswer.textComponent.text.ToLower()[i] != ' ' && encryptionAnswer.ToLower()[i] != ' ')
+                                    counter++;
+                            }
+                        }
+                        
                         // Decrease NP
-                        GameControllerV2.Instance.DecreaseNP(5);
+                        GameControllerV2.Instance.DecreaseNP(counter);
 
                         // Feedback for incorrect answer
                         inputForDialogue[0] = "Whoops.. You weren't able to properly encrypt the text." +
                             "\nThe correct ansser is: " + encryptionAnswer.ToLower() +"" +
                             "\nYour answer was: " + encryptedAnswer.textComponent.text.ToLower() + "" +
-                            "\nTry again in the next question!";
+                          "\nTry again in the next question! You got " + counter + "/10 points";
                         dialogue = new Dialogue { sentences = inputForDialogue };
 
                         EIncorrect.GetComponent<DialogueTrigger>().dialogue = dialogue;
@@ -155,7 +172,7 @@ public class OneTimePadQuizManager : MonoBehaviour {
                         GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(1);
                         
                         // increase NP
-                        GameControllerV2.Instance.IncreaseNP(5);
+                        GameControllerV2.Instance.IncreaseNP(10);
                         
                         // Feedback for correct answer
                         inputForDialogue[0] = "Perfect! You encrypted correctly! You're doind a great job!" +
@@ -168,14 +185,35 @@ public class OneTimePadQuizManager : MonoBehaviour {
                     }
                     else
                     {
-                        // Decrease NP
-                        GameControllerV2.Instance.DecreaseNP(5);
+                        byte counter = 0;
+                        //comparing the two solutions (user VS computer) to see who has shortest answer:
+                        byte chooseOne = encryptedAnswer.textComponent.text.ToLower().Length <= 11 ?
+                                                        (byte)encryptedAnswer.textComponent.text.ToLower().Length : (byte)11;
+
+                        for (byte i = 0; i <= chooseOne; i++)
+                        {
+                            if (encryptedAnswer.textComponent.text.ToLower()[i] == encryptionAnswer.ToLower()[i])
+                            {
+                                if (encryptedAnswer.textComponent.text.ToLower()[i] != ' ' && encryptionAnswer.ToLower()[i] != ' ')
+                                    counter++;
+                            }
+                        }
                         
+                        // Decrease NP
+                        GameControllerV2.Instance.DecreaseNP(counter);
+                       /* 
                         // Feedback for incorrect answer
                         inputForDialogue[0] = "Whoops.. You weren't able to properly encrypt the text." +
                             "\nThe correct ansser is: " + encryptionAnswer.ToLower() + "" +
                             "\nYour answer was: " + encryptedAnswer.textComponent.text.ToLower() + "" +
-                            "\nTry harder the next time but until then don't stop practice!";
+                            "\nTry again in the next question! You got " + counter + "/10 points";
+                        */
+                        inputForDialogue[0] = "Whoops.. You weren't able to properly encrypt the text." +
+                            "\nThe correct ansser is: " + encryptionAnswer.ToLower() + "" +
+                            "\nYour answer was: " + encryptedAnswer.textComponent.text.ToLower() + "" +
+                            "\nTry harder the next time but until then don't stop practice!" +
+                            "\nYou got " + counter + "/10 points";
+                        
                         dialogue = new Dialogue { sentences = inputForDialogue };
 
                         EIncorrect.GetComponent<DialogueTrigger>().dialogue = dialogue;
