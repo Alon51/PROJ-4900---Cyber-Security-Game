@@ -962,3 +962,17 @@ case 3:
         //GameObject.Find("ECorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
 
         //GameObject.Find("EIncorrect").GetComponent<DialogueTrigger>().TriggerDialogue();
+
+
+
+From the RSA dialouge:
+
+Now the message is ready to be sent to Alice!
+Note that this message could land in the wrong hands, for example a hacker, but even in that scenario it 
+would be extremely complicated to decrypt the message, 
+time-wise speaking, without the necessary keys.
+
+
+Now Bob can be confident that only Alice will see the message because she's the only 
+one that holds the correct private key that associated with her publlic key. 
+That ensure confidentiality which is the first layer of encryption.

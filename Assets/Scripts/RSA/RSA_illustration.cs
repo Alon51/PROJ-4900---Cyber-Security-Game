@@ -12,8 +12,10 @@ public class RSA_illustration : MonoBehaviour {
     public GameObject envelope;
     public GameObject message;
     public GameObject sceneElevenToCheck;
-    public GameObject private_frame;
-    public GameObject public_frame;
+    public GameObject private_frame_bob;//bob
+    public GameObject public_frame_bob;//bob
+    public GameObject private_frame_alice; // alice
+    public GameObject public_frame_alice; // alice
     public GameObject lock_image;
     public GameObject back_btn;
 
@@ -28,22 +30,29 @@ public class RSA_illustration : MonoBehaviour {
     private Rigidbody2D boyRB;
     private Rigidbody2D envelopeRB;
     private Rigidbody2D messageRB;
-    private Rigidbody2D private_frameRB;
-    private Rigidbody2D public_frameRB;
+    private Rigidbody2D private_frame_bob_RB;
+    private Rigidbody2D public_frame_bob_RB;
+    private Rigidbody2D private_frame_alice_RB;
+    private Rigidbody2D public_frame_alice_RB;
     private Rigidbody2D key_1RB;
     private Rigidbody2D key_4RB;
 
     private Vector2 velocity;
     private bool communication;
-    // Use this for initialization
+    private bool reverse = false;
+    private bool reverseLastPart = false;
     void Awake()
     {
         girlRB = girl.GetComponent<Rigidbody2D>();
         boyRB = boy.GetComponent<Rigidbody2D>();
         envelopeRB = envelope.GetComponent<Rigidbody2D>();
         messageRB = message.GetComponent<Rigidbody2D>();
-        private_frameRB = private_frame.GetComponent<Rigidbody2D>();
-        public_frameRB = public_frame.GetComponent<Rigidbody2D>();
+
+        private_frame_bob_RB = private_frame_bob.GetComponent<Rigidbody2D>();
+        public_frame_bob_RB = public_frame_bob.GetComponent<Rigidbody2D>();
+        private_frame_alice_RB = private_frame_alice.GetComponent<Rigidbody2D>();
+        public_frame_alice_RB = public_frame_alice.GetComponent<Rigidbody2D>();
+
         key_1RB = key_1.GetComponent<Rigidbody2D>();
         key_4RB = key_4.GetComponent<Rigidbody2D>();
 
@@ -143,11 +152,12 @@ public class RSA_illustration : MonoBehaviour {
         {
             dialog.setProceed(false);
 
-            if (private_frame.transform.position.x > 0)
+            //Moving to the middle the red box to show Bob's public key 
+            if (public_frame_bob.transform.position.x > 0)
             {
-                private_frameRB.MovePosition(private_frameRB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
+                public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
             }
-            else
+            else // After the red box in the middle let the user continue
                 dialog.setProceed(true);
         }
 
@@ -155,29 +165,91 @@ public class RSA_illustration : MonoBehaviour {
         {
             dialog.setProceed(false);
 
-            if (public_frame.transform.position.x <= 0) //Move girl pic:
+            //check eatch time if the green box is in the middle of the screen to then strat moving both boxed outside:
+            if (private_frame_bob.transform.position.x < 0)
+                reverse = true;
+
+            //Moving the green box to the middle:
+            if (reverse == false && private_frame_bob.transform.position.x > 0) 
+                private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
+
+            //After the green box is in the middle the we can start to move both boxes outside to implement decryption:
+            if(reverse && private_frame_bob.transform.position.x < 13.0f)
             {
-                public_frameRB.MovePosition(public_frameRB.position + velocity * (-1) * Time.fixedDeltaTime);
+                //The speed of moving the boxes is slow to make sure that the user can read everything:
+                private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
+                public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
             }
-            else
+            else//Allow the user continue:
                 dialog.setProceed(true);
         }
 
         if (dialog.currentSentenceDisplayed == 11)
         {
+            //setting the reverse for the next sentence (12):
+            reverse = false;
+                
             if (dialog.getFinished_typing())
                 dialog.setProceed(true);
             else
                 dialog.setProceed(false);
+            
+            if (public_frame_bob.transform.position.x > 0)
+                public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
+            else if(private_frame_alice.transform.position.x < 0)
+                private_frame_alice_RB.MovePosition(private_frame_alice_RB.position + new Vector2(5, 0) * Time.fixedDeltaTime);
+                
 
-            message.SetActive(false);
-            private_frame.SetActive(false);
-            public_frame.SetActive(false);
-            lock_image.SetActive(true);
+            //message.SetActive(false);
+            //private_frame_bob.SetActive(false);
+            //private_frame_alice.SetActive(false);
+            //lock_image.SetActive(true);
         }
 
         if (dialog.currentSentenceDisplayed == 12)
         {
+            if(public_frame_bob.transform.position.x <= 12)
+                dialog.setProceed(false);
+            else
+                dialog.setProceed(true);
+
+            //check eatch time if the black box is in the middle of the screen to then strat moving both boxes outside:
+            if (public_frame_alice.transform.position.x > 0)
+                reverse = true;
+
+            //Moving the black box to the middle
+            if(reverse == false && public_frame_alice.transform.position.x < 0)
+                public_frame_alice_RB.MovePosition(public_frame_alice_RB.position + new Vector2(5, 0) * Time.fixedDeltaTime);
+
+            //After the black box is in the middle then we can start to move both boxes (balck & yellow) outside to implement decryption:
+            if (reverse && private_frame_alice.transform.position.x > -13.0f)
+            {
+                //The speed of moving the boxes is slow to make sure that the user can read everything:
+                private_frame_alice_RB.MovePosition(private_frame_alice_RB.position + new Vector2(-1.5f, 0) * Time.fixedDeltaTime);
+                public_frame_alice_RB.MovePosition(public_frame_alice_RB.position + new Vector2(-1.5f, 0) * Time.fixedDeltaTime);
+            }
+
+            if(private_frame_alice.transform.position.x < -13.0f && public_frame_alice.transform.position.x < -13.0f)
+            {
+                if (private_frame_bob.transform.position.x < 0)
+                    reverseLastPart = true;
+                
+                //Moving the green box to the middle:
+                if (reverseLastPart == false && private_frame_bob.transform.position.x > 0)
+                    private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
+
+                //After the green box is in the middle the we can start to move both boxes outside to implement decryption:
+                if (reverseLastPart && private_frame_bob.transform.position.x < 13.0f)
+                {
+                    //The speed of moving the boxes is slow to make sure that the user can read everything:
+                    private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
+                    public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
+                }
+            }
+            //else//Allow the user continue:
+                //dialog.setProceed(true);
+
+
             /*if (key_1.transform.position.x <= 0) //Move key to the right
             {
                 dialog.setProceed(false);
@@ -201,7 +273,7 @@ public class RSA_illustration : MonoBehaviour {
             */
         }
 
-        if (dialog.currentSentenceDisplayed == 14)
+        if (dialog.currentSentenceDisplayed == 13)
         {
             //Start the quiz
             blackBackground.SetActive(true);
