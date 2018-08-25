@@ -177,8 +177,8 @@ public class RSA_illustration : MonoBehaviour {
             if(reverse && private_frame_bob.transform.position.x < 13.0f)
             {
                 //The speed of moving the boxes is slow to make sure that the user can read everything:
-                private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
-                public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
+                private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(2f, 0) * Time.fixedDeltaTime);
+                public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(2f, 0) * Time.fixedDeltaTime);
             }
             else//Allow the user continue:
                 dialog.setProceed(true);
@@ -225,8 +225,8 @@ public class RSA_illustration : MonoBehaviour {
             if (reverse && private_frame_alice.transform.position.x > -13.0f)
             {
                 //The speed of moving the boxes is slow to make sure that the user can read everything:
-                private_frame_alice_RB.MovePosition(private_frame_alice_RB.position + new Vector2(-1.5f, 0) * Time.fixedDeltaTime);
-                public_frame_alice_RB.MovePosition(public_frame_alice_RB.position + new Vector2(-1.5f, 0) * Time.fixedDeltaTime);
+                private_frame_alice_RB.MovePosition(private_frame_alice_RB.position + new Vector2(-2.5f, 0) * Time.fixedDeltaTime);
+                public_frame_alice_RB.MovePosition(public_frame_alice_RB.position + new Vector2(-2.5f, 0) * Time.fixedDeltaTime);
             }
 
             if(private_frame_alice.transform.position.x < -13.0f && public_frame_alice.transform.position.x < -13.0f)
@@ -242,8 +242,8 @@ public class RSA_illustration : MonoBehaviour {
                 if (reverseLastPart && private_frame_bob.transform.position.x < 13.0f)
                 {
                     //The speed of moving the boxes is slow to make sure that the user can read everything:
-                    private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
-                    public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(1.5f, 0) * Time.fixedDeltaTime);
+                    private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
+                    public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
                 }
             }
             //else//Allow the user continue:

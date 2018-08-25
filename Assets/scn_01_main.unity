@@ -21591,24 +21591,13 @@ MonoBehaviour:
       text which is the message he would like to encrypt. '
     - In order for Bob to insure confidentiality, he will use his public key to encrypt
       the message.
-    - 'And to decrypt the message Alice will use Bob''s private key.
-
-      Now we got back to the original message again.
-
-      That''s the first phase. Lets see the second phase...'
+    - "And to decrypt the message Alice will use Bob's private key.\nNow we got back
+      to the original message again.\nThat's the first phase. \nLet's see the second
+      phase..."
     - For the second phase - authenticity/digital signature, we will start with the
-      first part which is encrypt with Bob's public and then Alice's private.
-    - And the second part, decrypt with Alice's public and then Bob's private
-    - 
-    - Then Bob will use Alice's public key to encrypt the message again.
-    - 'Now the message is ready to be sent to Alice!
-
-      Note that this message could land in the wrong hands, for example a hacker,
-      but even in that scenario it would be extremely complicated to decrypt the message,
-      time-wise speaking, without the necessary keys.'
-    - Now Bob can be confident that only Alice will see the message because she's
-      the only one that holds the correct private key that associated with her publlic
-      key. That ensure confidentiality which is the first layer of encryption.
+      first part of the phase which is encrypt with Bob's public and then Alice's
+      private.
+    - And the second part, decrypt with Alice's public and then Bob's private.
     - 'That''s it! Simple right?
 
       What you have learned so far is only the theory but in practice the RSA involves
@@ -38102,7 +38091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.019, y: -0.616}
+  m_AnchoredPosition: {x: 0.019, y: -0.558}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326640576
@@ -62216,7 +62205,7 @@ RectTransform:
   m_GameObject: {fileID: 2146160837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.6165304, y: 1.6137561, z: 0}
+  m_LocalScale: {x: 5.30901, y: 2.2665708, z: 0}
   m_Children:
   - {fileID: 1326640575}
   m_Father: {fileID: 2107854898}
@@ -62224,7 +62213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.36, y: 1.56}
+  m_AnchoredPosition: {x: -8.557, y: 1.485}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &2146160839

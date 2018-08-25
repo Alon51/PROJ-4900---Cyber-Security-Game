@@ -162,7 +162,8 @@ public class DialogueManager : MonoBehaviour
             sentencesStack.Push(sentence); // To save it in the stack 
 
             StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));
+            //text_dialogue.text = sentence;
+            StartCoroutine(TypeSentence(sentence)); // You can disable that but you need to modify the demonstrations (10,11)
         }
     }
 
