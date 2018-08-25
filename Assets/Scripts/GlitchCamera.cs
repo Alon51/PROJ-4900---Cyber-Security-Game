@@ -7,9 +7,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlitchCamera : MonoBehaviour
 {
+    public InputField name; // Drag and drop the input field for the name 
+
     public Camera cam;
 
     public bool glitch = false;     // flag for glitch effect
@@ -24,6 +27,7 @@ public class GlitchCamera : MonoBehaviour
     // initialization
     void Start()
     {
+        
         if(cam == null)
         {
             cam = gameObject.GetComponent<Camera>();
@@ -95,16 +99,19 @@ public class GlitchCamera : MonoBehaviour
 
     public void StartGlitch()
     {
-        glitch = true;
-
-        if(GameControllerV2.Instance.GetState() == 0) // only if in title state
+        if(name.textComponent.text != "")
         {
-            GameObject.Find("scn_title_CONTROL").GetComponent<SceneControllerTitle>().SwitchTitleButtons();
-            GameObject.Find("dlg_start").GetComponent<DialogueTrigger>().TriggerDialogue();
-            FindObjectOfType<MainUIController>().AdjustMenuOnStart();
-        }
+            glitch = true;
 
-        // play a glitch sound
-        GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(0);
+            if (GameControllerV2.Instance.GetState() == 0) // only if in title state
+            {
+                GameObject.Find("scn_title_CONTROL").GetComponent<SceneControllerTitle>().SwitchTitleButtons();
+                GameObject.Find("dlg_start").GetComponent<DialogueTrigger>().TriggerDialogue();
+                FindObjectOfType<MainUIController>().AdjustMenuOnStart();
+            }
+
+            // play a glitch sound
+            GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(0);
+        }
     }
 }

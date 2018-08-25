@@ -83,55 +83,16 @@ public class DialogueManager : MonoBehaviour
 
         text_name.text = dialogue.name;
 
-        //sentences.Clear();
         sentencesArrayList.Clear();
         sentencesStack.Clear();
 
         foreach(string sentence in dialogue.sentences)
-        {
-            //sentences.Enqueue(sentence);
             sentencesArrayList.Add(sentence);
-            //Debug.Log(sentencesArrayList.Count);
-            //Debug.Log(sentencesArrayList[sentencesArrayList.Count-1]);
-        }
-
+        
         sentencesArrayList.Reverse(); // That will flip the list to start from the first sentence
 
         DisplayNextSentenceArray(); // it was DisplayNextSentence()
     }
-    /*
-    public void DisplayNextSentence() //When the user clicks the button in the dialoue box
-    {
-        if(proceed) // In some cases like in the demonstraion of the one time pad - the user can't proceed until demonstration is over for each sentence
-        {
-            // sentences haven't ended
-            if (!has_ended)
-            {
-                //are there more sentences in the queue?
-                if (sentences.Count == 0)
-                {
-                    elapsed_time = 0;
-                    has_ended = true;
-                    has_started = false;
-
-                    // switch out of dialogue
-                    GameControllerV2.Instance.DialogueSwitch();
-
-                    return;
-                }
-            }
-
-            // play a beep sound
-            GameObject.Find("SoundManager").GetComponent<AudioControllerV2>().PlaySound(3);
-
-            string sentence = sentences.Dequeue();
-            sentencesStack.Push(sentence); // To save it in the stack 
-
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));   
-        }
-    }
-    */
 
     public void DisplayNextSentenceArray() //When the user clicks the button in the dialoue box
     {
@@ -166,7 +127,6 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(TypeSentence(sentence)); // You can disable that but you need to modify the demonstrations (10,11)
         }
     }
-
 
     public void DisplayPrecedingSentence() //When the user clicks the button in the dialoue box
     {
@@ -211,7 +171,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             text_dialogue.text += letter;
-            yield return null;
+
         }
 
         //Check if both lengths of original sentence is the same as the sentence gets typed:
@@ -219,6 +179,7 @@ public class DialogueManager : MonoBehaviour
         {
             finished_typing = true;
         }
+        yield return null;
     }
 
     void FixedUpdate()

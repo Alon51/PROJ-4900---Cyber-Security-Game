@@ -41,6 +41,7 @@ public class RSA_illustration : MonoBehaviour {
     private bool communication;
     private bool reverse = false;
     private bool reverseLastPart = false;
+
     void Awake()
     {
         girlRB = girl.GetComponent<Rigidbody2D>();

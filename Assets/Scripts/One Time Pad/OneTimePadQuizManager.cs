@@ -97,13 +97,12 @@ public class OneTimePadQuizManager : MonoBehaviour {
                     }
                     else // answer is not correct:
                     {
-
                         byte counter = 0;
                         //comparing the two solutions (user VS computer) to see who has shortest answer:
                         byte chooseOne = encryptedAnswer.textComponent.text.ToLower().Length <= 11 ? 
                                                         (byte) encryptedAnswer.textComponent.text.ToLower().Length : (byte) 11;
-                                                          
-                        for (byte i = 0; i <= chooseOne; i++)
+
+                        for (byte i = 0; i < chooseOne; i++)
                         {
                             //Debug.Log(encryptedAnswer.textComponent.text.ToLower()[i] + " ---1--- " + encryptionAnswer.ToLower()[i]);
                             if (encryptedAnswer.textComponent.text.ToLower()[i] == encryptionAnswer.ToLower()[i])
@@ -190,7 +189,7 @@ public class OneTimePadQuizManager : MonoBehaviour {
                         byte chooseOne = encryptedAnswer.textComponent.text.ToLower().Length <= 11 ?
                                                         (byte)encryptedAnswer.textComponent.text.ToLower().Length : (byte)11;
 
-                        for (byte i = 0; i <= chooseOne; i++)
+                        for (byte i = 0; i < chooseOne; i++)
                         {
                             if (encryptedAnswer.textComponent.text.ToLower()[i] == encryptionAnswer.ToLower()[i])
                             {
