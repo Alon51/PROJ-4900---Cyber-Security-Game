@@ -1029,3 +1029,39 @@ That ensure confidentiality which is the first layer of encryption.
             //Debug.Log(sentencesArrayList.Count);
             //Debug.Log(sentencesArrayList[sentencesArrayList.Count-1]);
         }
+
+
+
+
+
+
+
+        if (dialog.currentSentenceDisplayed == 12){
+
+                //else//Allow the user continue:
+                //dialog.setProceed(true);
+
+
+            /*if (key_1.transform.position.x <= 0) //Move key to the right
+            {
+                dialog.setProceed(false);
+                key_1RB.MovePosition(key_1RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
+            }
+            else
+            {
+                if (key_4.transform.position.x > 0)
+                {
+                    key_4RB.MovePosition(key_4RB.position + new Vector2(-2.5f, 0) * Time.fixedDeltaTime);
+                }
+                else
+                    dialog.setProceed(true);
+            }*/
+
+            /*
+             * The text for sentence 12 in the dialouge box:
+             * Once Alice gets the message she will decrypt it with her own private key and then with Bob’s public key.
+             * Note that it's actually the opposite from the encrypting process where Bob used his private key and Alice's 
+             * public key.
+            */
+
+            }

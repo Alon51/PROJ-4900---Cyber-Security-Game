@@ -1496,6 +1496,7 @@ GameObject:
   - component: {fileID: 82204356}
   - component: {fileID: 82204355}
   - component: {fileID: 82204353}
+  - component: {fileID: 82204357}
   m_Layer: 5
   m_Name: name
   m_TagString: Untagged
@@ -1551,7 +1552,18 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 82204357}
+        m_MethodName: TriggerEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
@@ -1620,6 +1632,27 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82204352}
   m_CullTransparentMesh: 0
+--- !u!114 &82204357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82204352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 207469858, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventName: Input name
+  m_TrackableProperty:
+    m_Fields:
+    - m_ParamName: Input field name
+      m_Target: {fileID: 1326789430}
+      m_FieldPath: field path name
+      m_TypeString: type string name
+      m_DoStatic: 1
+      m_StaticString: static string name
+  m_Trigger: 0
 --- !u!1 &83063441
 GameObject:
   m_ObjectHideFlags: 0
@@ -9999,7 +10032,13 @@ MonoBehaviour:
 
 
     Click the menu button to reset the game, change the volumes, or skip your current
-    month (only on quizzes!)'
+    month (only on quizzes!)
+
+
+    To start enter your name and then hit the start button!
+
+
+    To start enter your name and then hit the start button!'
 --- !u!222 &360851268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24040,7 +24079,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: {fileID: 82204353}
-  cam: {fileID: 0}
+  name_gameObject: {fileID: 82204352}
+  cam: {fileID: 805104095}
   glitch: 0
 --- !u!1 &810672633
 GameObject:

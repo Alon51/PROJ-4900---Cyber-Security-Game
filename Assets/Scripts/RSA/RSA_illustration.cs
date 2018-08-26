@@ -181,20 +181,29 @@ public class RSA_illustration : MonoBehaviour {
                 private_frame_bob_RB.MovePosition(private_frame_bob_RB.position + new Vector2(2f, 0) * Time.fixedDeltaTime);
                 public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(2f, 0) * Time.fixedDeltaTime);
             }
-            else//Allow the user continue:
-                dialog.setProceed(true);
+            //else//Allow the user continue:
+                //dialog.setProceed(true);
+
+            if(public_frame_bob.transform.position.x > 12.5) // If the red box is outside then continue
+                dialog.setProceed(true); 
         }
 
         if (dialog.currentSentenceDisplayed == 11)
         {
+            if (private_frame_alice.transform.position.x < 0)
+                dialog.setProceed(false);
+            else
+                dialog.setProceed(true);
+
             //setting the reverse for the next sentence (12):
             reverse = false;
                 
-            if (dialog.getFinished_typing())
-                dialog.setProceed(true);
-            else
-                dialog.setProceed(false);
-            
+            //if (dialog.getFinished_typing())
+                //dialog.setProceed(true);
+            //else
+                //dialog.setProceed(false);
+
+            //Moving the red box first and then the yellow 
             if (public_frame_bob.transform.position.x > 0)
                 public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(-5, 0) * Time.fixedDeltaTime);
             else if(private_frame_alice.transform.position.x < 0)
@@ -247,31 +256,6 @@ public class RSA_illustration : MonoBehaviour {
                     public_frame_bob_RB.MovePosition(public_frame_bob_RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
                 }
             }
-            //else//Allow the user continue:
-                //dialog.setProceed(true);
-
-
-            /*if (key_1.transform.position.x <= 0) //Move key to the right
-            {
-                dialog.setProceed(false);
-                key_1RB.MovePosition(key_1RB.position + new Vector2(2.5f, 0) * Time.fixedDeltaTime);
-            }
-            else
-            {
-                if (key_4.transform.position.x > 0)
-                {
-                    key_4RB.MovePosition(key_4RB.position + new Vector2(-2.5f, 0) * Time.fixedDeltaTime);
-                }
-                else
-                    dialog.setProceed(true);
-            }*/
-
-            /*
-             * The text for sentence 12 in the dialouge box:
-             * Once Alice gets the message she will decrypt it with her own private key and then with Bob’s public key.
-             * Note that it's actually the opposite from the encrypting process where Bob used his private key and Alice's 
-             * public key.
-            */
         }
 
         if (dialog.currentSentenceDisplayed == 13)

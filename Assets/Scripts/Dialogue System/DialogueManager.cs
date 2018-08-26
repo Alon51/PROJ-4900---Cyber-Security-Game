@@ -171,7 +171,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             text_dialogue.text += letter;
-
+            //yield return null; -----> If you want to type the sentence letter by letter you need to uncomment this
         }
 
         //Check if both lengths of original sentence is the same as the sentence gets typed:
@@ -179,7 +179,8 @@ public class DialogueManager : MonoBehaviour
         {
             finished_typing = true;
         }
-        yield return null;
+
+        yield return null; // comment out here to type letter by letter
     }
 
     void FixedUpdate()

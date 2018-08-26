@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GlitchCamera : MonoBehaviour
 {
     public InputField name; // Drag and drop the input field for the name 
-
+    public GameObject name_gameObject;
     public Camera cam;
 
     public bool glitch = false;     // flag for glitch effect
@@ -101,6 +101,8 @@ public class GlitchCamera : MonoBehaviour
     {
         if(name.textComponent.text != "")
         {
+            name_gameObject.SetActive(false);
+
             glitch = true;
 
             if (GameControllerV2.Instance.GetState() == 0) // only if in title state
